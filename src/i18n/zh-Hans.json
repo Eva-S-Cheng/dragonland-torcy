@@ -62,5 +62,8 @@
     "open": "营业中",
     "closingSoon": "即将打烊",
     "closed": "休息中"
+  },
+  "signatures": {
+    "title": "招牌推荐"
   }
 }

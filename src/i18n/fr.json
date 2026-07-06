@@ -62,5 +62,8 @@
     "open": "Ouvert",
     "closingSoon": "Ferme bientôt",
     "closed": "Fermé"
+  },
+  "signatures": {
+    "title": "Nos incontournables"
   }
 }

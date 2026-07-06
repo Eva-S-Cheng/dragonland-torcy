@@ -62,5 +62,8 @@
     "open": "Open",
     "closingSoon": "Closing soon",
     "closed": "Closed"
+  },
+  "signatures": {
+    "title": "House favourites"
   }
 }
