@@ -6,9 +6,9 @@
 
 :root {
   /* Couleurs */
-  --red: #b02a22;          /* placeholder — rouge logo à extraire */
-  --red-dark: #8c1f19;
-  --red-soft: #fbeeec;
+  --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
+  --red-dark: #5c1522;
+  --red-soft: #f6edef;
   --ink: #221d1b;
   --ink-soft: #6b615d;
   --paper: #fdfaf6;
