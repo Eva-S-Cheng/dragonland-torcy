@@ -139,17 +139,12 @@
   }
   
   .brand-mark {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--red);
+    letter-spacing: -0.01em;
   }
   
-  .brand-name {
-    font-family: var(--font);
-    font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--ink);
-  }
   
   .nav {
     display: flex;
@@ -806,3 +801,5 @@
   
     .cta-bar a:last-child { border-right: none; }
   }
+  
+  .footer-credit { font-size: 0.8rem; opacity: 0.75; }

@@ -1,0 +1,37 @@
+LICENCE — Tous droits réservés / All rights reserved
+
+Copyright (c) 2026 Eva S. Cheng
+
+CODE SOURCE
+Le code source de ce site (fichiers HTML, CSS, JavaScript/JSX, configuration
+et scripts de déploiement) est la propriété d'Eva S. Cheng.
+Toute reproduction, modification, distribution ou réutilisation, totale ou
+partielle, sans autorisation écrite préalable est interdite.
+
+CONTENUS ET MARQUES
+Les contenus du restaurant (nom « Dragonland », enseigne « 忠誠 », logo,
+carte, prix, photographies et textes descriptifs) sont la propriété du
+restaurant Dragonland (SAS DRAGONLAND, RCS Meaux 838 148 427) et sont
+utilisés avec son accord. Ils ne sont pas couverts par la présente licence.
+
+DÉPENDANCES TIERCES
+Les bibliothèques tierces (React, Vite, polices Fontsource, etc.) restent
+soumises à leurs licences respectives.
+
+---
+
+SOURCE CODE
+The source code of this website (HTML, CSS, JavaScript/JSX files,
+configuration and deployment scripts) is the property of Eva S. Cheng.
+Any reproduction, modification, distribution or reuse, in whole or in part,
+without prior written permission is prohibited.
+
+CONTENT AND TRADEMARKS
+Restaurant content (the name "Dragonland", the "忠誠" sign, logo, menu,
+prices, photographs and descriptive texts) is the property of the
+Dragonland restaurant (SAS DRAGONLAND, RCS Meaux 838 148 427), used with
+its permission, and is not covered by this license.
+
+THIRD-PARTY DEPENDENCIES
+Third-party libraries (React, Vite, Fontsource fonts, etc.) remain subject
+to their respective licenses.

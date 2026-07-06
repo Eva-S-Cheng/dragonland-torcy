@@ -153,16 +153,16 @@ function LangSwitcher() {
 
 // ---------- Header sticky ----------
 function Header({ route }) {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   const [navOpen, setNavOpen] = useState(false)
   const close = () => setNavOpen(false)
+  const isZh = lang.startsWith('zh')
 
   return (
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href="#/home" onClick={close}>
-          <span className="brand-mark" aria-hidden="true">忠誠</span>
-          <span className="brand-name">Dragonland</span>
+          <span className="brand-mark">{isZh ? '忠誠' : 'Dragonland'}</span>
         </a>
 
         <nav className={`nav${navOpen ? ' open' : ''}`}>
@@ -459,6 +459,7 @@ export default function App() {
               ))}
             </p>
             <p className="footer-line">© {new Date().getFullYear()} Dragonland — Torcy · {t('footer.rights')}</p>
+            <p className="footer-line footer-credit">Site · © {new Date().getFullYear()} Eva S. Cheng</p>
           </div>
         </div>
       </footer>
