@@ -57,5 +57,10 @@
     "pmr": "无障碍通道",
     "vouchers": "接受餐券",
     "takeaway": "提供外带"
+  },
+  "status": {
+    "open": "营业中",
+    "closingSoon": "即将打烊",
+    "closed": "休息中"
   }
 }

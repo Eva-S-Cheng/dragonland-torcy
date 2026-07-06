@@ -30,7 +30,7 @@
     --font-body: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   
     /* Layout */
-    --content-max: 1200px;
+    --content-max: 1360px;
     --gutter: clamp(1.25rem, 4vw, 3rem);
     --header-height: 68px;
     --cta-bar-height: 64px;
@@ -255,7 +255,14 @@
       radial-gradient(ellipse 60% 80% at 85% 20%, color-mix(in srgb, var(--gold) 22%, transparent), transparent),
       linear-gradient(150deg, var(--red) 20%, var(--red-deep) 90%);
     color: var(--on-red);
-    padding: clamp(4rem, 12vh, 7.5rem) 0 clamp(2.5rem, 7vh, 4.5rem);
+    padding: clamp(4rem, 12vh, 7.5rem) 0;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
   }
   
   .hero h1 {
@@ -286,36 +293,47 @@
   
   .hero-cta .btn { padding: 0.85rem 1.8rem; font-size: 1rem; }
   
-  /* Pastilles info verre dépoli */
-  .hero-chips {
+  /* Statut en direct — emoji + texte, sans boîtes */
+  .hero-status {
     list-style: none;
-    margin: clamp(2.5rem, 7vh, 4rem) 0 0;
+    margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  
-  .hero-chips li {
-    background: color-mix(in srgb, var(--on-red) 12%, transparent);
-    border: 1px solid color-mix(in srgb, var(--on-red) 22%, transparent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: var(--radius);
-    padding: 0.7rem 1.1rem;
-    font-size: 0.92rem;
-    font-weight: 600;
-    display: flex;
     flex-direction: column;
-    gap: 0.1rem;
+    gap: 1.1rem;
+    font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem);
+    font-weight: 700;
   }
   
-  .chip-label {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.68rem;
-    font-weight: 700;
-    color: color-mix(in srgb, var(--on-red) 70%, transparent);
+  .hero-status li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    white-space: nowrap;
+  }
+  
+  .hero-status a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .hero-status a:hover { text-decoration: underline; }
+  
+  .status-emoji { font-size: 1.35em; }
+  
+  .status-open { color: #a5e8b6; }
+  .status-closingSoon { color: var(--gold); }
+  .status-closed { color: color-mix(in srgb, var(--on-red) 70%, transparent); }
+  
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  
+    .hero-status {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem 1.75rem;
+      margin-top: 2rem;
+    }
   }
   
   /* ============================================================

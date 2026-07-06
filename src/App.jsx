@@ -63,6 +63,24 @@ function todayHours() {
   return RESTAURANT.hours.find((h) => h.day === DAY_KEYS[new Date().getDay()])
 }
 
+// Statut en direct : open / closingSoon (≤ 30 min de la fermeture) / closed
+function openStatus() {
+  const today = todayHours()
+  if (!today?.lunch) return 'closed'
+  const now = new Date()
+  const mins = now.getHours() * 60 + now.getMinutes()
+  const toMins = (hhmm) => {
+    const [h, m] = hhmm.split(':').map(Number)
+    return h * 60 + m
+  }
+  for (const [start, end] of [today.lunch, today.dinner]) {
+    const s = toMins(start)
+    const e = toMins(end)
+    if (mins >= s && mins < e) return e - mins <= 30 ? 'closingSoon' : 'open'
+  }
+  return 'closed'
+}
+
 function HoursTable() {
   const { t, lang } = useI18n()
   return (
@@ -178,33 +196,33 @@ function Header({ route }) {
 
 // ---------- Pages ----------
 function HomePage() {
-  const { t, lang } = useI18n()
-  const today = todayHours()
+  const { t } = useI18n()
+  const status = openStatus()
   return (
     <>
       <section className="hero">
-        <div className="container">
-          <h1>{t('hero.title')}</h1>
-          <p className="hero-tagline">{t('hero.subtitle')}</p>
-          <p className="hero-note">{t('hero.note')}</p>
-          <div className="hero-cta">
-            <a className="btn btn-light" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
-            <a className="btn btn-ghost" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
+        <div className="container hero-grid">
+          <div>
+            <h1>{t('hero.title')}</h1>
+            <p className="hero-tagline">{t('hero.subtitle')}</p>
+            <p className="hero-note">{t('hero.note')}</p>
+            <div className="hero-cta">
+              <a className="btn btn-light" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
+              <a className="btn btn-ghost" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
+            </div>
           </div>
-          <ul className="hero-chips">
-            <li>
-              <span className="chip-label">{t('hours.today')}</span>
-              {today?.lunch
-                ? `${formatRange(today.lunch, lang)} · ${formatRange(today.dinner, lang)}`
-                : t('hours.closed')}
+          <ul className="hero-status">
+            <li className={`status-${status}`}>
+              <span className="status-emoji" aria-hidden="true">🚪</span>
+              {t(`status.${status}`)}
             </li>
             <li>
-              <span className="chip-label">{t('contact.phone')}</span>
-              {RESTAURANT.phoneDisplay}
+              <span className="status-emoji" aria-hidden="true">📞</span>
+              <a href={`tel:${RESTAURANT.phone}`}>{RESTAURANT.phoneDisplay}</a>
             </li>
             <li>
-              <span className="chip-label">Bay 1</span>
-              Torcy
+              <span className="status-emoji" aria-hidden="true">📍</span>
+              Bay 1 · Torcy
             </li>
           </ul>
         </div>

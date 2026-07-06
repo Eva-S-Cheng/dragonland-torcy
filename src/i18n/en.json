@@ -57,5 +57,10 @@
     "pmr": "Wheelchair accessible",
     "vouchers": "Meal vouchers accepted",
     "takeaway": "Takeaway available"
+  },
+  "status": {
+    "open": "Open",
+    "closingSoon": "Closing soon",
+    "closed": "Closed"
   }
 }

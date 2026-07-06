@@ -57,5 +57,10 @@
     "pmr": "Accès PMR",
     "vouchers": "Tickets restaurant acceptés",
     "takeaway": "Vente à emporter"
+  },
+  "status": {
+    "open": "Ouvert",
+    "closingSoon": "Ferme bientôt",
+    "closed": "Fermé"
   }
 }
