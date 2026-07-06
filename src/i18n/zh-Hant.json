@@ -68,5 +68,10 @@
   },
   "signatures": {
     "title": "招牌菜"
+  },
+  "reviews": {
+    "title": "顧客評價",
+    "cta": "查看全部評價",
+    "googleReviews": "Google 評價"
   }
 }

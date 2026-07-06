@@ -25,6 +25,20 @@ const RESTAURANT = {
 
 const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
+// ---------- Avis (curation manuelle — mettre à jour le compteur de temps en temps) ----------
+const REVIEWS_META = {
+  rating: 4.1,
+  count: 557,
+  url: 'https://www.google.com/maps/search/?api=1&query=Dragonland+Bay+1+Torcy',
+}
+
+// REMPLACER par 3 extraits courts choisis dans les avis Google (avec prénom + initiale).
+const REVIEWS = [
+  { author: 'Alice L.', text: 'PLACEHOLDER — extrait court d\u2019avis n°1' },
+  { author: 'Xuelan S.', text: 'PLACEHOLDER — extrait court d\u2019avis n°2' },
+  { author: 'Tommy', text: 'PLACEHOLDER — extrait court d\u2019avis n°3' },
+]
+
 
 // ---------- Mini routeur hash ----------
 const ROUTES = ['home', 'menu', 'contact']
@@ -304,6 +318,39 @@ function SignatureCarousel() {
   )
 }
 
+function ReviewsSection() {
+  const { t } = useI18n()
+  const stars = Math.round(REVIEWS_META.rating)
+  return (
+    <section className="band">
+      <div className="container">
+        <div className="rev-head">
+          <h2>{t('reviews.title')}</h2>
+          <div className="rev-meta">
+            <span className="rev-stars" aria-label={`${REVIEWS_META.rating}/5`}>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <svg key={i} viewBox="0 0 24 24" width="18" height="18" fill={i <= stars ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                  <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              ))}
+            </span>
+            <span className="rev-score">{REVIEWS_META.rating.toLocaleString('fr-FR')}/5 · {REVIEWS_META.count} {t('reviews.googleReviews')}</span>
+          </div>
+        </div>
+        <ul className="rev-list">
+          {REVIEWS.map(({ author, text }) => (
+            <li key={author} className="rev-card">
+              <p className="rev-text">« {text} »</p>
+              <span className="rev-author">{author}</span>
+            </li>
+          ))}
+        </ul>
+        <a className="btn btn-outline" href={REVIEWS_META.url} target="_blank" rel="noreferrer">{t('reviews.cta')}</a>
+      </div>
+    </section>
+  )
+}
+
 // ---------- Pages ----------
 function HomePage() {
   const { t } = useI18n()
@@ -375,6 +422,8 @@ function HomePage() {
       </section>
 
       <SignatureCarousel />
+
+      <ReviewsSection />
 
       <section className="band">
         <div className="container hours-band">

@@ -68,5 +68,10 @@
   },
   "signatures": {
     "title": "Nos signatures"
+  },
+  "reviews": {
+    "title": "Ils en parlent",
+    "cta": "Voir tous les avis",
+    "googleReviews": "avis Google"
   }
 }

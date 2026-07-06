@@ -68,5 +68,10 @@
   },
   "signatures": {
     "title": "Signature dishes"
+  },
+  "reviews": {
+    "title": "What people say",
+    "cta": "See all reviews",
+    "googleReviews": "Google reviews"
   }
 }
