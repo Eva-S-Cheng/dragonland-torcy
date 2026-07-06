@@ -7,14 +7,13 @@
   },
   "cta": {
     "takeaway": "Takeaway",
-    "delivery": "Delivery",
     "call": "Call",
     "book": "Book a table"
   },
   "hero": {
     "title": "Dragonland",
     "subtitle": "Chinese, Thai and Vietnamese cuisine in Torcy",
-    "note": "Homemade dishes — dine in, takeaway or delivery"
+    "note": "Homemade dishes — dine in or takeaway"
   },
   "hours": {
     "title": "Opening hours",
@@ -39,7 +38,7 @@
   },
   "menu": {
     "title": "Menu",
-    "wip": "The full menu is coming soon. Meanwhile, order takeaway or delivery."
+    "wip": "The full menu is coming soon. Meanwhile, order takeaway."
   },
   "footer": {
     "rights": "All rights reserved"

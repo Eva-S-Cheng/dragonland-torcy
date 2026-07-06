@@ -5,9 +5,13 @@ import { useI18n, LANGS } from './i18n/index.jsx'
 const RESTAURANT = {
   phone: '0164686780',
   phoneDisplay: '01 64 68 67 80',
-  takeawayUrl: 'https://takeaway.tablemi.com/', // TODO: lien exact TableMi Dragonland
-  ubereatsUrl: 'https://www.ubereats.com/', // TODO: lien exact page Uber Eats
+  takeawayUrl: 'https://takeaway.tablemi.com/98654da88e1e727937fcff92?lang=fr',
   mapsUrl: 'https://maps.google.com/?q=Dragonland+Bay+1+Torcy',
+  socials: [
+    { name: 'Facebook', url: 'https://www.facebook.com/Dragonland-%E5%BF%A0%E8%AA%A0-215839242392397/' },
+    { name: 'Tripadvisor', url: 'https://www.tripadvisor.fr/Restaurant_Review-g651715-d15660382-Reviews-Dragonland-Torcy_Marne_la_Vallee_Seine_et_Marne_Ile_de_France.html' },
+    { name: 'Yelp', url: 'https://www.yelp.com/biz/dragonland-torcy' },
+  ],
   // Horaires : format neutre HH:MM, mis en forme par langue au rendu. null = fermé
   hours: [
     { day: 'mon', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
@@ -119,7 +123,6 @@ function CtaBar() {
   return (
     <nav className="cta-bar" aria-label="Actions rapides">
       <a href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
-      <a href={RESTAURANT.ubereatsUrl} target="_blank" rel="noreferrer">{t('cta.delivery')}</a>
       <a href={`tel:${RESTAURANT.phone}`}>{t('cta.call')}</a>
     </nav>
   )
@@ -178,7 +181,6 @@ function HomePage() {
           <p>{t('hero.note')}</p>
           <p style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a className="btn btn-primary" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
-            <a className="btn btn-primary" href={RESTAURANT.ubereatsUrl} target="_blank" rel="noreferrer">{t('cta.delivery')}</a>
             <a className="btn btn-outline" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
           </p>
         </div>
@@ -258,6 +260,14 @@ export default function App() {
       </main>
       <footer className="site-footer">
         <div className="container">
+          <p className="footer-socials">
+            {RESTAURANT.socials.map(({ name, url }, i) => (
+              <span key={name}>
+                {i > 0 && ' · '}
+                <a href={url} target="_blank" rel="noreferrer">{name}</a>
+              </span>
+            ))}
+          </p>
           © {new Date().getFullYear()} Dragonland — Torcy · {t('footer.rights')}
         </div>
       </footer>

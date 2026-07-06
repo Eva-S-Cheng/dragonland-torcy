@@ -213,12 +213,19 @@
     white-space: nowrap;
   }
   
+  .hours-table td:not(:first-child) { text-align: center; }
+  
+  .footer-socials { margin: 0 0 0.5rem; }
+  .footer-socials a { color: var(--ink-soft); }
+  .footer-socials a:hover { color: var(--red); }
+  
   @media (max-width: 480px) {
     .hours-table { font-size: 0.85rem; }
     .hours-table td { padding: 0.35rem 0.5rem 0.35rem 0; }
   }
   
   .hours-table td:first-child { font-weight: 600; }
+  .hours-table td:not(:first-child) { text-align: center; }
   .hours-table .closed { color: var(--red); font-weight: 600; }
   
   /* ---------- Boutons ---------- */
@@ -278,7 +285,7 @@
   
     .cta-bar {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -326,8 +333,8 @@
   }
   
   .contact-card {
-    background: var(--red-soft);
-    border: 1px solid var(--red-line);
+    background: #fff;
+    border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 1.75rem;
   }

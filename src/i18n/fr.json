@@ -7,14 +7,13 @@
   },
   "cta": {
     "takeaway": "À emporter",
-    "delivery": "Livraison",
     "call": "Appeler",
     "book": "Réserver"
   },
   "hero": {
     "title": "Dragonland",
     "subtitle": "Cuisine chinoise, thaïlandaise et vietnamienne à Torcy",
-    "note": "Plats faits maison — sur place, à emporter ou en livraison"
+    "note": "Plats faits maison — sur place ou à emporter"
   },
   "hours": {
     "title": "Horaires",
@@ -39,7 +38,7 @@
   },
   "menu": {
     "title": "La carte",
-    "wip": "La carte arrive bientôt. En attendant, commandez à emporter ou en livraison."
+    "wip": "La carte arrive bientôt. En attendant, commandez à emporter."
   },
   "footer": {
     "rights": "Tous droits réservés"
