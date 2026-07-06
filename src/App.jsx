@@ -156,13 +156,12 @@ function Header({ route }) {
   const { t, lang } = useI18n()
   const [navOpen, setNavOpen] = useState(false)
   const close = () => setNavOpen(false)
-  const isZh = lang.startsWith('zh')
 
   return (
     <header className="site-header">
       <div className="container header-inner">
         <a className="brand" href="#/home" onClick={close}>
-          <span className="brand-mark">{isZh ? '忠誠' : 'Dragonland'}</span>
+          <span className="brand-mark">{lang === 'zh-Hant' ? '忠誠' : lang === 'zh-Hans' ? '忠诚' : 'Dragonland'}</span>
         </a>
 
         <nav className={`nav${navOpen ? ' open' : ''}`}>
