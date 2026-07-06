@@ -187,6 +187,24 @@ function HomePage() {
       </section>
       <section className="section section-center">
         <div className="container">
+          <h2>{t('about.title')}</h2>
+          <p className="about-text">{t('about.text')}</p>
+          <p className="about-events">{t('about.events')}</p>
+        </div>
+      </section>
+      <section className="section section-center">
+        <div className="container">
+          <ul className="features">
+            <li>{t('features.terrace')}</li>
+            <li>{t('features.aircon')}</li>
+            <li>{t('features.pmr')}</li>
+            <li>{t('features.vouchers')}</li>
+            <li>{t('features.takeaway')}</li>
+          </ul>
+        </div>
+      </section>
+      <section className="section section-center">
+        <div className="container">
           <h2>{t('hours.title')}</h2>
           <HoursTable />
         </div>
