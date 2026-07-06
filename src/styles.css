@@ -4,217 +4,229 @@
    valeurs extraites du logo (étape 1).
    ============================================================ */
 
-:root {
-  /* Couleurs */
-  --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
-  --red-dark: #5c1522;
-  --red-soft: #f6edef;
-  --ink: #221d1b;
-  --ink-soft: #6b615d;
-  --paper: #fdfaf6;
-  --line: #e8ded6;
-  --gold: #c99a3f;         /* accent secondaire, à valider */
-
-  /* Typo — placeholders, affinés à l'étape design */
-  --font-display: 'Georgia', 'Noto Serif TC', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', 'Noto Sans TC', sans-serif;
-
-  /* Layout */
-  --max-width: 1080px;
-  --gutter: 1.25rem;
-  --cta-bar-height: 64px;
-  --radius: 10px;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--ink);
-  background: var(--paper);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
-
-a { color: var(--red); }
-
-:focus-visible {
-  outline: 2px solid var(--red);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
-
-/* ---------- Structure ---------- */
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
-}
-
-.site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  min-height: 60px;
-}
-
-.brand {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--red);
-  text-decoration: none;
-}
-
-.nav {
-  display: flex;
-  gap: 1.25rem;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 0.95rem;
-}
-
-.nav a[aria-current='page'] { color: var(--red); font-weight: 600; }
-
-.lang-switcher {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.lang-switcher button {
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--ink-soft);
-  border-radius: var(--radius);
-  padding: 0.25rem 0.55rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.lang-switcher button[aria-pressed='true'] {
-  background: var(--red);
-  border-color: var(--red);
-  color: #fff;
-}
-
-/* ---------- Sections ---------- */
-
-.hero {
-  padding: 4rem 0 3rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
-  margin: 0 0 0.5rem;
-  color: var(--red);
-}
-
-.hero p { color: var(--ink-soft); margin: 0.25rem 0; }
-
-.section { padding: 2.5rem 0; }
-.section h2 { color: var(--red-dark); }
-
-.hours-table {
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 480px;
-}
-
-.hours-table td {
-  padding: 0.4rem 0.75rem 0.4rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.hours-table td:first-child { font-weight: 600; }
-.hours-table .closed { color: var(--red); font-weight: 600; }
-
-/* ---------- Boutons ---------- */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.65rem 1.2rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: 1px solid transparent;
-}
-
-.btn-primary { background: var(--red); color: #fff; }
-.btn-primary:hover { background: var(--red-dark); }
-.btn-outline { border-color: var(--red); color: var(--red); background: transparent; }
-.btn-outline:hover { background: var(--red-soft); }
-
-/* ---------- Barre CTA mobile ---------- */
-
-.cta-bar {
-  display: none;
-}
-
-@media (max-width: 720px) {
-  body { padding-bottom: var(--cta-bar-height); }
-
-  .nav { display: none; } /* remplacé par un menu simplifié plus tard si besoin */
-
-  .cta-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: var(--cta-bar-height);
-    background: var(--red);
-    z-index: 20;
-    padding-bottom: env(safe-area-inset-bottom);
+   :root {
+    /* Couleurs */
+    --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
+    --red-dark: #5c1522;
+    --red-soft: #f6edef;
+    --ink: #221d1b;
+    --ink-soft: #6b615d;
+    --paper: #fdfaf6;
+    --line: #e8ded6;
+    --gold: #c99a3f;         /* accent secondaire, à valider */
+  
+    /* Typo — pile générique (latin) ; le chinois est géré par :lang() plus bas */
+    --font-display: 'Georgia', serif;
+    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  
+    /* Layout */
+    --max-width: 1080px;
+    --gutter: 1.25rem;
+    --cta-bar-height: 64px;
+    --radius: 10px;
   }
-
-  .cta-bar a {
+  
+  * { box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
+  
+  /* Polices chinoises cohérentes par script (évite le mélange de graisses
+     quand une fonte TC ne couvre pas les caractères simplifiés) */
+  html:lang(zh-Hant) body,
+  html:lang(zh-Hant) h1, html:lang(zh-Hant) h2, html:lang(zh-Hant) h3 {
+    font-family: 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', system-ui, sans-serif;
+  }
+  
+  html:lang(zh-Hans) body,
+  html:lang(zh-Hans) h1, html:lang(zh-Hans) h2, html:lang(zh-Hans) h3 {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  }
+  
+  a { color: var(--red); }
+  
+  :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  
+  /* ---------- Structure ---------- */
+  
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .site-header .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 60px;
+  }
+  
+  .brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--red);
+    text-decoration: none;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  
+  .nav a[aria-current='page'] { color: var(--red); font-weight: 600; }
+  
+  .lang-switcher {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .lang-switcher button {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    border-radius: var(--radius);
+    padding: 0.25rem 0.55rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  
+  .lang-switcher button[aria-pressed='true'] {
+    background: var(--red);
+    border-color: var(--red);
     color: #fff;
+  }
+  
+  /* ---------- Sections ---------- */
+  
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    margin: 0 0 0.5rem;
+    color: var(--red);
+  }
+  
+  .hero p { color: var(--ink-soft); margin: 0.25rem 0; }
+  
+  .section { padding: 2.5rem 0; }
+  .section h2 { color: var(--red-dark); }
+  
+  .hours-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 480px;
+  }
+  
+  .hours-table td {
+    padding: 0.4rem 0.75rem 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .hours-table td:first-child { font-weight: 600; }
+  .hours-table .closed { color: var(--red); font-weight: 600; }
+  
+  /* ---------- Boutons ---------- */
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--radius);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.95rem;
+    border: 1px solid transparent;
   }
-
-  .cta-bar a:last-child { border-right: none; }
-}
-
-/* ---------- Footer ---------- */
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  padding: 2rem 0 3rem;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  text-align: center;
-}
+  
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-outline { border-color: var(--red); color: var(--red); background: transparent; }
+  .btn-outline:hover { background: var(--red-soft); }
+  
+  /* ---------- Barre CTA mobile ---------- */
+  
+  .cta-bar {
+    display: none;
+  }
+  
+  @media (max-width: 720px) {
+    body { padding-bottom: var(--cta-bar-height); }
+  
+    .nav { display: none; } /* remplacé par un menu simplifié plus tard si besoin */
+  
+    .cta-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--cta-bar-height);
+      background: var(--red);
+      z-index: 20;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  
+    .cta-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+  
+    .cta-bar a:last-child { border-right: none; }
+  }
+  
+  /* ---------- Footer ---------- */
+  
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0 3rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align: center;
+  }

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from 'react'
+import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 import fr from './fr.json'
 import en from './en.json'
 import zhHant from './zh-Hant.json'
@@ -29,11 +29,14 @@ const I18nContext = createContext(null)
 export function I18nProvider({ children }) {
   const [lang, setLangState] = useState(detectLang)
 
+  useEffect(() => {
+    document.documentElement.lang = LANGS[lang].htmlLang
+  }, [lang])
+
   const setLang = useCallback((code) => {
     if (!LANGS[code]) return
     setLangState(code)
     localStorage.setItem(STORAGE_KEY, code)
-    document.documentElement.lang = LANGS[code].htmlLang
   }, [])
 
   // t('hero.title') → chaîne traduite, fallback FR puis clé brute

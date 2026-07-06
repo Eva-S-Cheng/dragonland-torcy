@@ -62,7 +62,7 @@ function Header({ route }) {
   return (
     <header className="site-header">
       <div className="container">
-        <a className="brand" href="#/home">Dragonland</a>
+        <a className="brand" href="#/home">{t('brand')}</a>
         <nav className="nav">
           <a href="#/home" aria-current={route === 'home' ? 'page' : undefined}>{t('nav.home')}</a>
           <a href="#/menu" aria-current={route === 'menu' ? 'page' : undefined}>{t('nav.menu')}</a>
