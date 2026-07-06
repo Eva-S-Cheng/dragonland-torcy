@@ -1007,7 +1007,7 @@
   /* Ligne compacte : hauteur FIXE identique pour toutes, image carrée à gauche */
   .menu-row {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 84px;
     background: var(--surface);
     border-radius: 12px;
@@ -1048,20 +1048,21 @@
     min-width: 0;
     padding: 0.4rem 0.9rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.15rem;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
-  .menu-line {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
+  .menu-text {
+    flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
   }
   
   .menu-code {
     flex: none;
+    margin-top: 1px;
     border: 1px solid var(--red-line);
     color: var(--red);
     border-radius: var(--radius-pill);
@@ -1071,7 +1072,7 @@
     letter-spacing: 0.04em;
   }
   
-  .menu-line h3 {
+  .menu-text h3 {
     flex: 1;
     min-width: 0;
     margin: 0;
@@ -1086,7 +1087,7 @@
   
   .menu-price {
     flex: none;
-    margin-left: auto;
+    margin-top: 1px;
     color: var(--red);
     font-weight: 700;
     font-size: 0.9rem;

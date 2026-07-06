@@ -505,17 +505,17 @@ function MenuPage() {
                   />
                 </div>
                 <div className="menu-main">
-                  <div className="menu-line">
-                    <span className="menu-code">{d.id}</span>
+                  <span className="menu-code">{d.id}</span>
+                  <div className="menu-text">
                     <h3>{nameOf(d)}</h3>
-                    <span className="menu-price">{priceLabel}</span>
+                    {d.variants && (
+                      <p className="menu-variants">
+                        {d.variants.map((v) => `${nameOf(v)} ${fmtPrice(v.price)}`).join(' · ')}
+                      </p>
+                    )}
+                    {d.note && <p className="menu-note">{nameOf(d.note)}</p>}
                   </div>
-                  {d.variants && (
-                    <p className="menu-variants">
-                      {d.variants.map((v) => `${nameOf(v)} ${fmtPrice(v.price)}`).join(' · ')}
-                    </p>
-                  )}
-                  {d.note && <p className="menu-note">{nameOf(d.note)}</p>}
+                  <span className="menu-price">{priceLabel}</span>
                 </div>
               </li>
             )
