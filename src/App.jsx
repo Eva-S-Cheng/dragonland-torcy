@@ -213,22 +213,32 @@ function HomePage() {
           </div>
           <ul className="hero-status">
             <li className={`status-${status}`}>
-              <span className="status-emoji" aria-hidden="true">🚪</span>
+              <svg className="status-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M13 4h3a2 2 0 0 1 2 2v14" />
+                <path d="M2 20h20" />
+                <path d="M13 4 6.5 2.4A1.2 1.2 0 0 0 5 3.56V20l8 0z" />
+                <circle cx="10.5" cy="12" r="0.6" fill="currentColor" stroke="none" />
+              </svg>
               {t(`status.${status}`)}
             </li>
             <li>
-              <span className="status-emoji" aria-hidden="true">📞</span>
+              <svg className="status-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
               <a href={`tel:${RESTAURANT.phone}`}>{RESTAURANT.phoneDisplay}</a>
             </li>
             <li>
-              <span className="status-emoji" aria-hidden="true">📍</span>
+              <svg className="status-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
               Bay 1 · Torcy
             </li>
           </ul>
         </div>
       </section>
 
-      <section className="band band-surface">
+      <section className="band">
         <div className="container">
           <div className="about-grid">
             <div className="about-main">
@@ -251,12 +261,12 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="band band-red">
+      <section className="band band-alt">
         <div className="container hours-band">
           <div className="hours-band-text">
             <h2>{t('hours.title')}</h2>
             <p>{t('contact.bookNote')}</p>
-            <a className="btn btn-light" href={`tel:${RESTAURANT.phone}`}>{t('cta.call')} · {RESTAURANT.phoneDisplay}</a>
+            <a className="btn btn-primary" href={`tel:${RESTAURANT.phone}`}>{t('cta.call')} · {RESTAURANT.phoneDisplay}</a>
           </div>
           <div className="hours-band-card">
             <HoursTable />

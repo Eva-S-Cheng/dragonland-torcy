@@ -24,14 +24,13 @@
   
     color-scheme: light dark;
   
-    /* Typo : Fraunces pour les titres (latin), Noto Sans pour le texte.
-       En chinois, les titres retombent sur Noto Sans TC/SC bold. */
-    --font-display: 'Fraunces', 'Noto Sans TC', serif;
-    --font-body: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    /* Typo : une seule famille — Space Grotesk (latin),
+       Noto Sans TC/SC en chinois (même esprit géométrique) */
+    --font: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   
     /* Layout */
-    --content-max: 1360px;
-    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --content-max: none;
+    --gutter: clamp(1.25rem, 4vw, 4rem);
     --header-height: 68px;
     --cta-bar-height: 64px;
     --radius: 16px;
@@ -62,7 +61,7 @@
   
   body {
     margin: 0;
-    font-family: var(--font-body);
+    font-family: var(--font);
     color: var(--ink);
     background: var(--paper);
     font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.08rem);
@@ -71,10 +70,10 @@
   }
   
   h1, h2, h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.12;
-    letter-spacing: 0.005em;
+    font-family: var(--font);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
   
   a { color: var(--red); }
@@ -105,7 +104,6 @@
   
   .container {
     width: 100%;
-    max-width: var(--content-max);
     margin-inline: auto;
     padding-inline: var(--gutter);
   }
@@ -147,7 +145,7 @@
   }
   
   .brand-name {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 600;
     font-size: 1.25rem;
     color: var(--ink);
@@ -319,7 +317,7 @@
   
   .hero-status a:hover { text-decoration: underline; }
   
-  .status-emoji { font-size: 1.35em; }
+  .status-icon { flex: none; }
   
   .status-open { color: #a5e8b6; }
   .status-closingSoon { color: var(--gold); }
@@ -342,14 +340,9 @@
   
   .band { padding: clamp(3rem, 8vh, 5.5rem) 0; }
   
-  .band-surface { background: var(--surface); }
-  
-  .band-red {
-    background: linear-gradient(150deg, var(--red) 15%, var(--red-deep) 95%);
-    color: var(--on-red);
-  }
-  
-  .band-red h2 { color: var(--on-red); }
+  /* Séparation discrète entre sections : un simple filet, pas de zébrage */
+  .band + .band { border-top: 1px solid var(--line); }
+  .band-alt { }
   
   .page-title {
     font-size: clamp(2rem, 4vw, 3rem);
@@ -432,7 +425,7 @@
   
   .hours-band-text h2 { margin-top: 0; }
   
-  .hours-band-text p { color: color-mix(in srgb, var(--on-red) 82%, transparent); }
+  .hours-band-text p { color: var(--ink-soft); }
   
   .hours-band-text .btn { margin-top: 0.75rem; }
   
@@ -597,7 +590,7 @@
   }
   
   .footer-brand {
-    font-family: var(--font-display);
+    font-family: var(--font);
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--red);
