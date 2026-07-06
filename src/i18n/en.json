@@ -39,7 +39,8 @@
   },
   "menu": {
     "title": "Menu",
-    "wip": "The full menu is coming soon. Meanwhile, order takeaway."
+    "wip": "The full menu is coming soon. Meanwhile, order takeaway.",
+    "allergens": "Allergens: please let us know about any allergies when ordering."
   },
   "footer": {
     "rights": "All rights reserved"

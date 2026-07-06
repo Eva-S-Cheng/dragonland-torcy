@@ -39,7 +39,8 @@
   },
   "menu": {
     "title": "La carte",
-    "wip": "La carte arrive bientôt. En attendant, commandez à emporter."
+    "wip": "La carte arrive bientôt. En attendant, commandez à emporter.",
+    "allergens": "Allergènes : merci de signaler vos allergies lors de votre commande."
   },
   "footer": {
     "rights": "Tous droits réservés"

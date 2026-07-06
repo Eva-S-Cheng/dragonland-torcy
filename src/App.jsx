@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useI18n, LANGS } from './i18n/index.jsx'
+import MENU from './menu.json'
 
 // ---------- Données restaurant (source unique de vérité) ----------
 const RESTAURANT = {
@@ -34,8 +35,8 @@ const REVIEWS_META = {
 
 // Extraits d'avis Google (fournis/validés par Eva). Le 3e attend un avis en chinois.
 const REVIEWS = [
-  { author: 'Alice L.', text: 'Nous y allons très souvent en famille, c\u2019est notre QG ! Les portions sont généreuses et l\u2019ambiance très familiale.' },
-  { author: 'Xuelan S.', text: 'This restaurant is a legend! Authentic Cantonese cuisine \u2014 even in Canton it\u2019s not easy to find one this good. Reasonable prices, very kind service.' },
+  { author: 'Alice L.', text: 'Nous y allons très souvent en famille, c\'est notre QG ! Les portions sont généreuses et l\'ambiance très familiale.' },
+  { author: 'Xuelan S.', text: 'This restaurant is a legend! Authentic Cantonese cuisine \u2014 even in Canton it\'s not easy to find one this good. Reasonable prices, very kind service.' },
   { author: 'M. N.', text: 'Le meilleur Loc-Lac de la région parisienne. Le riz est bien sauté, servi chaud, et la viande bien dorée au poivre noir.' },
 ]
 
@@ -259,7 +260,7 @@ const SIGNATURES = [
   { id: 'M2', fr: 'Soupe Phnom Penh', en: 'Phnom Penh noodle soup', zhHant: '金邊粿條', zhHans: '金边裸条', price: '11 €', img: null },
   { id: 'A24', fr: 'Homard sauté au sel & poivre', en: 'Salt & pepper lobster', zhHant: '椒鹽炒龍蝦', zhHans: '椒盐炒龙虾', price: '48 €', img: null },
   { id: 'V2', fr: 'Raviolis de crevette Ha-Kao', en: 'Har gow shrimp dumplings', zhHant: '羊城蝦餃', zhHans: '羊城虾饺', price: '8,50 €', img: null },
-  { id: 'A4', fr: 'Gambas au jaune d\u2019\u0153uf de canard', en: 'King prawns, salted egg yolk', zhHant: '金沙大蝦', zhHans: '金沙大虾', price: '21 €', img: null },
+  { id: 'A4', fr: 'Gambas au jaune d\'\u0153uf de canard', en: 'King prawns, salted egg yolk', zhHant: '金沙大蝦', zhHans: '金沙大虾', price: '21 €', img: null },
 ]
 
 function SignatureCarousel() {
@@ -448,12 +449,73 @@ function HomePage() {
 }
 
 function MenuPage() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
+  const [catId, setCatId] = useState(MENU.categories[0].id)
+  const cat = MENU.categories.find((c) => c.id === catId) ?? MENU.categories[0]
+
+  // Une seule langue affichée : zh → hanzi, en → retombe sur le français (carte FR/中文)
+  const nameOf = (o) => (lang === 'zh-Hant' ? o.zhHant : lang === 'zh-Hans' ? o.zhHans : o.fr)
+  const fmtPrice = (p) =>
+    `${p.toLocaleString('fr-FR', { minimumFractionDigits: Number.isInteger(p) ? 0 : 2 })} €`
+
   return (
     <section className="band">
       <div className="container">
         <h1 className="page-title">{t('menu.title')}</h1>
-        <p>{t('menu.wip')}</p>
+        <p className="menu-allergens">{t('menu.allergens')}</p>
+
+        <div className="menu-cats" role="tablist">
+          {MENU.categories.map((c) => (
+            <button
+              key={c.id}
+              role="tab"
+              aria-selected={c.id === cat.id}
+              onClick={() => setCatId(c.id)}
+            >
+              {nameOf(c.name)}
+            </button>
+          ))}
+        </div>
+
+        <ul className="menu-grid">
+          {cat.dishes.map((d) => (
+            <li key={d.id} className="menu-card">
+              <div className="menu-img">
+                <div className="menu-noimg" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3" />
+                    <circle cx="9" cy="9" r="2" />
+                    <path d="m21 15-3.5-3.5L6 23" />
+                  </svg>
+                </div>
+                <img
+                  src={`${import.meta.env.BASE_URL}${d.id}.jpeg`}
+                  alt={nameOf(d)}
+                  loading="lazy"
+                  onError={(e) => e.currentTarget.remove()}
+                />
+              </div>
+              <div className="menu-body">
+                <div className="menu-topline">
+                  <span className="menu-code">{d.id}</span>
+                  {d.price != null && <span className="menu-price">{fmtPrice(d.price)}</span>}
+                </div>
+                <h3>{nameOf(d)}</h3>
+                {d.variants && (
+                  <ul className="menu-variants">
+                    {d.variants.map((v) => (
+                      <li key={v.fr}>
+                        <span>{nameOf(v)}</span>
+                        <span className="menu-price">{fmtPrice(v.price)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {d.note && <p className="menu-note">{nameOf(d.note)}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
