@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/fraunces": "^5.1.0",
     "@fontsource/noto-sans": "^5.1.0",
     "@fontsource/noto-sans-sc": "^5.1.0",
     "@fontsource/noto-sans-tc": "^5.1.0",

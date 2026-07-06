@@ -26,7 +26,8 @@
     "sun": "Sunday",
     "closed": "Closed",
     "lunch": "Lunch",
-    "dinner": "Dinner"
+    "dinner": "Dinner",
+    "today": "Today"
   },
   "contact": {
     "title": "Find us",
