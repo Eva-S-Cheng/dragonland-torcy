@@ -32,11 +32,11 @@ const REVIEWS_META = {
   url: 'https://www.google.com/maps/search/?api=1&query=Dragonland+Bay+1+Torcy',
 }
 
-// REMPLACER par 3 extraits courts choisis dans les avis Google (avec prénom + initiale).
+// Extraits d'avis Google (fournis/validés par Eva). Le 3e attend un avis en chinois.
 const REVIEWS = [
-  { author: 'Alice L.', text: 'PLACEHOLDER — extrait court d\u2019avis n°1' },
-  { author: 'Xuelan S.', text: 'PLACEHOLDER — extrait court d\u2019avis n°2' },
-  { author: 'Tommy', text: 'PLACEHOLDER — extrait court d\u2019avis n°3' },
+  { author: 'Alice L.', text: 'Nous y allons très souvent en famille, c\u2019est notre QG ! Les portions sont généreuses et l\u2019ambiance très familiale.' },
+  { author: 'Xuelan S.', text: 'This restaurant is a legend! Authentic Cantonese cuisine \u2014 even in Canton it\u2019s not easy to find one this good. Reasonable prices, very kind service.' },
+  { author: 'M. N.', text: 'Le meilleur Loc-Lac de la région parisienne. Le riz est bien sauté, servi chaud, et la viande bien dorée au poivre noir.' },
 ]
 
 
