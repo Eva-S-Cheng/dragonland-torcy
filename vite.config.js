@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base: '/' car domaine custom (dragonland.fr).
-// Si test temporaire sur <user>.github.io/<repo>, passer base à '/<repo>/'.
+// base temporaire pour le déploiement de test sur eva-s-cheng.github.io/dragonland-torcy/
+// ⚠️ Repasser à base: '/' quand dragonland.fr sera branché (+ ajouter public/CNAME).
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/dragonland-torcy/',
   build: { sourcemap: false },
 })
