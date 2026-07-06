@@ -110,15 +110,15 @@
   
   /* Chinois : Noto Sans TC/SC pour tout (les graisses display serif latines
      n'existent pas en CJK, on assume le sans bold pour les titres) */
-  html:lang(zh-Hant) body { font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif; }
+  html:lang(zh-Hant) body { font-family: 'Space Grotesk', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif; }
   html:lang(zh-Hant) h1, html:lang(zh-Hant) h2, html:lang(zh-Hant) h3 {
-    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+    font-family: 'Space Grotesk', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
     font-weight: 700;
   }
   
-  html:lang(zh-Hans) body { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif; }
+  html:lang(zh-Hans) body { font-family: 'Space Grotesk', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif; }
   html:lang(zh-Hans) h1, html:lang(zh-Hans) h2, html:lang(zh-Hans) h3 {
-    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    font-family: 'Space Grotesk', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
     font-weight: 700;
   }
   
