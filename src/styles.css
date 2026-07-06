@@ -149,10 +149,18 @@
   .section { padding: 2.5rem 0; }
   .section h2 { color: var(--red-dark); }
   
+  /* Sections centrées (ex. horaires sur l'accueil) : titre centré,
+     tableau centré en bloc mais contenu aligné à gauche */
+  .section-center { text-align: center; }
+  .section-center .hours-table {
+    margin-inline: auto;
+    text-align: left;
+  }
+  
   .hours-table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
   }
   
   .hours-table td {
@@ -233,14 +241,24 @@
   
   @media (max-width: 860px) {
     .contact-grid { grid-template-columns: 1fr; }
+  
+    /* En colonne unique : blocs bornés et centrés, texte toujours à gauche */
+    .contact-card,
+    .contact-map {
+      width: 100%;
+      max-width: 620px;
+      margin-inline: auto;
+    }
   }
   
   .contact-card {
-    background: #fff;
-    border: 1px solid var(--line);
+    background: var(--red-soft);
+    border: 1px solid #e9d4d8;
     border-radius: var(--radius);
     padding: 1.75rem;
   }
+  
+  .contact-card .hours-table { max-width: none; }
   
   .contact-card h2 {
     margin: 0 0 0.25rem;

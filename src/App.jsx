@@ -143,7 +143,7 @@ function HomePage() {
           </p>
         </div>
       </section>
-      <section className="section">
+      <section className="section section-center">
         <div className="container">
           <h2>{t('hours.title')}</h2>
           <HoursTable />
