@@ -42,5 +42,18 @@
   },
   "footer": {
     "rights": "All rights reserved"
+  },
+  "about": {
+    "title": "About us",
+    "text": "Dragonland welcomes you in Torcy, inside the Bay 1 shopping centre, with a menu spanning Chinese, Thai and Vietnamese cuisine. Every dish is homemade, with the generous portions the house is known for. Dine in our air-conditioned rooms or on the terrace, for lunch or dinner.",
+    "events": "The restaurant is available for private events. Call us to arrange a date."
+  },
+  "features": {
+    "title": "Good to know",
+    "terrace": "Terrace",
+    "aircon": "Air-conditioned",
+    "pmr": "Wheelchair accessible",
+    "vouchers": "Meal vouchers accepted",
+    "takeaway": "Takeaway available"
   }
 }

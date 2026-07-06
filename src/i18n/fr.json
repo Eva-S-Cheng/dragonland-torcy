@@ -42,5 +42,18 @@
   },
   "footer": {
     "rights": "Tous droits réservés"
+  },
+  "about": {
+    "title": "La maison",
+    "text": "Dragonland vous accueille à Torcy, au sein du centre commercial Bay 1, autour d'une carte qui traverse les cuisines chinoise, thaïlandaise et vietnamienne. Tous nos plats sont préparés maison, avec des portions généreuses qui font la réputation de la maison. En salle climatisée ou en terrasse, à midi comme au soir.",
+    "events": "Le restaurant peut accueillir vos événements privés. Appelez-nous pour convenir d'une date."
+  },
+  "features": {
+    "title": "Bon à savoir",
+    "terrace": "Terrasse",
+    "aircon": "Salle climatisée",
+    "pmr": "Accès PMR",
+    "vouchers": "Tickets restaurant acceptés",
+    "takeaway": "Vente à emporter"
   }
 }
