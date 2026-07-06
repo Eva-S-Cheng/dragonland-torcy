@@ -174,15 +174,19 @@ function HomePage() {
   return (
     <>
       <section className="hero">
-        <span className="hero-watermark" aria-hidden="true">忠誠</span>
         <div className="container">
-          <h1>{t('hero.title')}</h1>
-          <p>{t('hero.subtitle')}</p>
-          <p>{t('hero.note')}</p>
-          <p className="hero-cta">
-            <a className="btn btn-primary" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
-            <a className="btn btn-outline" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
-          </p>
+          <div>
+            <h1>{t('hero.title')}</h1>
+            <p>{t('hero.subtitle')}</p>
+            <p>{t('hero.note')}</p>
+            <p className="hero-cta">
+              <a className="btn btn-primary" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
+              <a className="btn btn-outline" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
+            </p>
+          </div>
+          <div className="hero-panel">
+            <span className="hero-panel-mark" aria-hidden="true">忠誠</span>
+          </div>
         </div>
       </section>
       <section className="section">

@@ -5,16 +5,20 @@
    ============================================================ */
 
    :root {
-    /* Couleurs */
+    /* Couleurs — clair */
     --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
-    --red-dark: #5c1522;     /* réservé aux états hover */
-    --red-soft: #f6edef;
-    --red-line: #e9d4d8;
-    --ink: #221d1b;
-    --ink-soft: #6b615d;
-    --paper: #fdfaf6;
-    --line: #e8ded6;
+    --red-hover: #5c1522;
+    --red-soft: #f3e6e2;
+    --red-line: #e3cfc8;
+    --on-red: #fff;
+    --ink: #2a231d;
+    --ink-soft: #6e6357;
+    --paper: #f5eee1;        /* crème, comme la carte papier du resto */
+    --surface: #fdf9f0;      /* cartes et panneaux, blanc cassé */
+    --line: #e2d7c5;
     --gold: #c99a3f;         /* accent secondaire, à valider */
+  
+    color-scheme: light dark;
   
     /* Typo — famille unique dans les 4 langues (Noto Sans latin + TC/SC),
        hiérarchie par la graisse, pas par changement de famille */
@@ -27,6 +31,21 @@
     --radius: 10px;
   }
   
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --red: #c05263;        /* bordeaux éclairci pour le contraste sur fond sombre */
+      --red-hover: #d16b7b;
+      --red-soft: #33242a;
+      --red-line: #4d333c;
+      --on-red: #1b1512;
+      --ink: #ece3d6;
+      --ink-soft: #b2a595;
+      --paper: #1b1512;
+      --surface: #262019;
+      --line: #3b332a;
+    }
+  }
+  
   * { box-sizing: border-box; }
   
   html { scroll-behavior: smooth; }
@@ -36,7 +55,7 @@
     font-family: var(--font-body);
     color: var(--ink);
     background: var(--paper);
-    font-size: clamp(0.95rem, 0.85rem + 0.45vw, 1.2rem);
+    font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.08rem);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -89,12 +108,14 @@
   }
   
   .site-header .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 1rem;
     min-height: 60px;
   }
+  
+  .site-header .header-actions { justify-self: end; }
   
   .brand {
     font-family: var(--font-body);
@@ -143,7 +164,7 @@
     margin: 0;
     padding: 0.25rem;
     list-style: none;
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
@@ -183,67 +204,61 @@
   /* ---------- Sections ---------- */
   
   .hero {
-    position: relative;
-    overflow: hidden;
-    background: var(--red);
-    color: #fff;
-    padding: clamp(4rem, 14vh, 8rem) 0 clamp(3.5rem, 11vh, 6.5rem);
-    text-align: left;
+    padding: clamp(2.5rem, 7vh, 4.5rem) 0;
+  }
+  
+  .hero .container {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
   }
   
   .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-size: clamp(2rem, 4vw, 3.2rem);
     margin: 0 0 0.75rem;
-    color: #fff;
+    color: var(--red);
   }
   
   .hero p {
-    color: rgba(255, 255, 255, 0.88);
+    color: var(--ink-soft);
     margin: 0.25rem 0;
-    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem);
-    max-width: 40ch;
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.15rem);
+    max-width: 44ch;
   }
   
   .hero-cta {
-    margin-top: 2rem;
+    margin-top: 1.75rem;
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
   }
   
-  .hero .btn-primary {
-    background: #fff;
-    color: var(--red);
+  /* Panneau bordeaux — accueillera une photo de plat ; en attendant, 忠誠 vertical */
+  .hero-panel {
+    background: var(--red);
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
   
-  .hero .btn-primary:hover { background: var(--paper); }
-  
-  .hero .btn-outline {
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #fff;
-  }
-  
-  .hero .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.12);
-  }
-  
-  /* Filigrane 忠誠 — signature de l'enseigne */
-  .hero-watermark {
-    position: absolute;
-    top: 50%;
-    right: clamp(1rem, 6vw, 6rem);
-    transform: translateY(-50%);
-    font-size: clamp(7rem, 22vw, 17rem);
-    line-height: 0.95;
+  .hero-panel-mark {
+    font-size: clamp(4rem, 9vw, 7.5rem);
+    line-height: 1.05;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.09);
+    color: var(--on-red);
+    opacity: 0.9;
     writing-mode: vertical-rl;
     user-select: none;
-    pointer-events: none;
   }
   
-  @media (max-width: 720px) {
-    .hero-watermark { font-size: 8rem; right: -1rem; }
+  @media (max-width: 820px) {
+    .hero .container { grid-template-columns: 1fr; }
+    .hero-panel { aspect-ratio: 16 / 7; }
+    .hero-panel-mark { writing-mode: horizontal-tb; font-size: 3.5rem; }
   }
   
   .section { padding: 2.5rem 0; }
@@ -275,10 +290,12 @@
   .about-main p {
     font-size: 1.05em;
     max-width: 72ch;
+    text-align: justify;
+    hyphens: auto;
   }
   
   .about-aside {
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 1.5rem 1.75rem;
@@ -290,6 +307,8 @@
     color: var(--ink-soft);
     font-size: 0.95em;
     margin: 1.25rem 0 0;
+    text-align: justify;
+    hyphens: auto;
   }
   
   .features {
@@ -364,8 +383,8 @@
     border: 1px solid transparent;
   }
   
-  .btn-primary { background: var(--red); color: #fff; }
-  .btn-primary:hover { background: var(--red-dark); }
+  .btn-primary { background: var(--red); color: var(--on-red); }
+  .btn-primary:hover { background: var(--red-hover); }
   .btn-outline { border-color: var(--red); color: var(--red); background: transparent; }
   .btn-outline:hover { background: var(--red-soft); }
   
@@ -421,7 +440,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: var(--on-red);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.9rem;
@@ -454,7 +473,7 @@
   }
   
   .contact-card {
-    background: #fff;
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
     padding: 1.75rem;
@@ -471,7 +490,12 @@
   
   .contact-address { font-weight: 600; margin: 0.25rem 0; }
   
-  .contact-access { color: var(--ink-soft); margin: 0.25rem 0 1.25rem; }
+  .contact-access {
+    color: var(--ink-soft);
+    margin: 0.25rem 0 1.25rem;
+    text-align: justify;
+    hyphens: auto;
+  }
   
   .contact-actions {
     display: flex;
