@@ -21,8 +21,8 @@
     --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
   
     /* Layout */
-    --max-width: 1240px;
-    --gutter: clamp(1.25rem, 4vw, 3rem);
+    --max-width: 1600px;
+    --gutter: clamp(1.25rem, 5vw, 5rem);
     --cta-bar-height: 64px;
     --radius: 10px;
   }
@@ -36,7 +36,7 @@
     font-family: var(--font-body);
     color: var(--ink);
     background: var(--paper);
-    font-size: clamp(0.95rem, 0.88rem + 0.35vw, 1.05rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.45vw, 1.2rem);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -183,12 +183,16 @@
   }
   
   .hero h1 {
-    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
     margin: 0 0 0.5rem;
     color: var(--red);
   }
   
-  .hero p { color: var(--ink-soft); margin: 0.25rem 0; }
+  .hero p {
+    color: var(--ink-soft);
+    margin: 0.25rem 0;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.35rem);
+  }
   
   .section { padding: 2.5rem 0; }
   .section h2 { color: var(--red); }
@@ -218,7 +222,7 @@
   
   .about-main p {
     font-size: 1.05em;
-    max-width: 60ch;
+    max-width: 72ch;
   }
   
   .about-aside {
