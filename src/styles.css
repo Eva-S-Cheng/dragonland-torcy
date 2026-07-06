@@ -7,8 +7,9 @@
    :root {
     /* Couleurs */
     --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
-    --red-dark: #5c1522;
+    --red-dark: #5c1522;     /* réservé aux états hover */
     --red-soft: #f6edef;
+    --red-line: #e9d4d8;
     --ink: #221d1b;
     --ink-soft: #6b615d;
     --paper: #fdfaf6;
@@ -35,6 +36,7 @@
     font-family: var(--font-body);
     color: var(--ink);
     background: var(--paper);
+    font-size: clamp(0.95rem, 0.88rem + 0.35vw, 1.05rem);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -110,25 +112,67 @@
   
   .nav a[aria-current='page'] { color: var(--red); font-weight: 600; }
   
-  .lang-switcher {
+  .header-actions {
     display: flex;
-    gap: 0.25rem;
+    align-items: center;
+    gap: 0.5rem;
   }
   
-  .lang-switcher button {
+  /* Sélecteur de langue (déroulant) */
+  .lang-dropdown { position: relative; }
+  
+  .lang-current {
     border: 1px solid var(--line);
     background: transparent;
-    color: var(--ink-soft);
+    color: var(--ink);
     border-radius: var(--radius);
-    padding: 0.25rem 0.55rem;
-    font-size: 0.85rem;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.9rem;
     cursor: pointer;
   }
   
-  .lang-switcher button[aria-pressed='true'] {
-    background: var(--red);
-    border-color: var(--red);
-    color: #fff;
+  .lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    min-width: 150px;
+    z-index: 30;
+  }
+  
+  .lang-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 0.75rem;
+    border-radius: calc(var(--radius) - 4px);
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  
+  .lang-menu button:hover { background: var(--red-soft); }
+  .lang-menu button[aria-selected='true'] { color: var(--red); font-weight: 700; }
+  
+  /* Hamburger — caché sur desktop */
+  .menu-toggle {
+    display: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.3rem 0.6rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
   }
   
   /* ---------- Sections ---------- */
@@ -147,7 +191,7 @@
   .hero p { color: var(--ink-soft); margin: 0.25rem 0; }
   
   .section { padding: 2.5rem 0; }
-  .section h2 { color: var(--red-dark); }
+  .section h2 { color: var(--red); }
   
   /* Sections centrées (ex. horaires sur l'accueil) : titre centré,
      tableau centré en bloc mais contenu aligné à gauche */
@@ -166,6 +210,12 @@
   .hours-table td {
     padding: 0.4rem 0.75rem 0.4rem 0;
     border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 480px) {
+    .hours-table { font-size: 0.85rem; }
+    .hours-table td { padding: 0.35rem 0.5rem 0.35rem 0; }
   }
   
   .hours-table td:first-child { font-weight: 600; }
@@ -200,7 +250,31 @@
   @media (max-width: 720px) {
     body { padding-bottom: var(--cta-bar-height); }
   
-    .nav { display: none; } /* remplacé par un menu simplifié plus tard si besoin */
+    .menu-toggle { display: inline-flex; }
+  
+    .nav { display: none; }
+  
+    .nav.open {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 0.5rem 0;
+      z-index: 25;
+    }
+  
+    .nav.open a {
+      padding: 0.85rem var(--gutter);
+      border-bottom: 1px solid var(--line);
+    }
+  
+    .nav.open a:last-child { border-bottom: none; }
   
     .cta-bar {
       display: grid;
@@ -253,7 +327,7 @@
   
   .contact-card {
     background: var(--red-soft);
-    border: 1px solid #e9d4d8;
+    border: 1px solid var(--red-line);
     border-radius: var(--radius);
     padding: 1.75rem;
   }

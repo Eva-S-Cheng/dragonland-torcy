@@ -41,34 +41,74 @@ function useHashRoute() {
 
 function LangSwitcher() {
   const { lang, setLang } = useI18n()
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (!open) return
+    const close = (e) => {
+      if (!e.target.closest('.lang-dropdown')) setOpen(false)
+    }
+    document.addEventListener('click', close)
+    return () => document.removeEventListener('click', close)
+  }, [open])
+
   return (
-    <div className="lang-switcher" role="group" aria-label="Language">
-      {Object.entries(LANGS).map(([code, { label, name }]) => (
-        <button
-          key={code}
-          aria-pressed={lang === code}
-          title={name}
-          onClick={() => setLang(code)}
-        >
-          {label}
-        </button>
-      ))}
+    <div className="lang-dropdown">
+      <button
+        className="lang-current"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        {LANGS[lang].label} <span aria-hidden="true">▾</span>
+      </button>
+      {open && (
+        <ul className="lang-menu" role="listbox" aria-label="Language">
+          {Object.entries(LANGS).map(([code, { name }]) => (
+            <li key={code}>
+              <button
+                role="option"
+                aria-selected={lang === code}
+                onClick={() => {
+                  setLang(code)
+                  setOpen(false)
+                }}
+              >
+                {name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
 
 function Header({ route }) {
   const { t } = useI18n()
+  const [navOpen, setNavOpen] = useState(false)
+  const close = () => setNavOpen(false)
+
   return (
     <header className="site-header">
       <div className="container">
-        <a className="brand" href="#/home">{t('brand')}</a>
-        <nav className="nav">
-          <a href="#/home" aria-current={route === 'home' ? 'page' : undefined}>{t('nav.home')}</a>
-          <a href="#/menu" aria-current={route === 'menu' ? 'page' : undefined}>{t('nav.menu')}</a>
-          <a href="#/contact" aria-current={route === 'contact' ? 'page' : undefined}>{t('nav.contact')}</a>
+        <a className="brand" href="#/home" onClick={close}>{t('brand')}</a>
+        <nav className={`nav${navOpen ? ' open' : ''}`}>
+          <a href="#/home" aria-current={route === 'home' ? 'page' : undefined} onClick={close}>{t('nav.home')}</a>
+          <a href="#/menu" aria-current={route === 'menu' ? 'page' : undefined} onClick={close}>{t('nav.menu')}</a>
+          <a href="#/contact" aria-current={route === 'contact' ? 'page' : undefined} onClick={close}>{t('nav.contact')}</a>
         </nav>
-        <LangSwitcher />
+        <div className="header-actions">
+          <LangSwitcher />
+          <button
+            className="menu-toggle"
+            aria-label="Menu"
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen((o) => !o)}
+          >
+            <span aria-hidden="true">{navOpen ? '✕' : '☰'}</span>
+          </button>
+        </div>
       </div>
     </header>
   )
@@ -86,20 +126,20 @@ function CtaBar() {
 }
 
 // Mise en forme des horaires selon la langue :
-// fr → 11h45 ; en → 11:45 am ; zh → 11:45（24h, usage courant）
+// fr → 11h45 ; en → 11:45 am (espace insécable) ; zh → 11:45（24h, usage courant）
 function formatTime(hhmm, lang) {
   const [h, m] = hhmm.split(':').map(Number)
   if (lang === 'fr') return `${h}h${String(m).padStart(2, '0')}`
   if (lang === 'en') {
     const ampm = h < 12 ? 'am' : 'pm'
     const h12 = h % 12 === 0 ? 12 : h % 12
-    return `${h12}:${String(m).padStart(2, '0')} ${ampm}`
+    return `${h12}:${String(m).padStart(2, '0')}\u00A0${ampm}`
   }
   return hhmm
 }
 
 function formatRange(range, lang) {
-  return `${formatTime(range[0], lang)} – ${formatTime(range[1], lang)}`
+  return `${formatTime(range[0], lang)}\u00A0–\u00A0${formatTime(range[1], lang)}`
 }
 
 function HoursTable() {
