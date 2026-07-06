@@ -13,13 +13,13 @@ const RESTAURANT = {
   ],
   // Horaires : format neutre HH:MM, mis en forme par langue au rendu. null = fermé
   hours: [
-    { day: 'mon', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
+    { day: 'mon', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:20'] },
     { day: 'tue', lunch: null, dinner: null },
-    { day: 'wed', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
-    { day: 'thu', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
-    { day: 'fri', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
-    { day: 'sat', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:25'] },
-    { day: 'sun', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:25'] },
+    { day: 'wed', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:20'] },
+    { day: 'thu', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:20'] },
+    { day: 'fri', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:20'] },
+    { day: 'sat', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:20'] },
+    { day: 'sun', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:20'] },
   ],
 }
 
@@ -326,22 +326,28 @@ function ReviewsSection() {
       <div className="container">
         <div className="rev-head">
           <h2>{t('reviews.title')}</h2>
-          <div className="rev-meta">
+          <a className="rev-badge" href={REVIEWS_META.url} target="_blank" rel="noreferrer">
+            <span className="rev-badge-score">{REVIEWS_META.rating.toLocaleString('fr-FR')}</span>
             <span className="rev-stars" aria-label={`${REVIEWS_META.rating}/5`}>
               {[1, 2, 3, 4, 5].map((i) => (
-                <svg key={i} viewBox="0 0 24 24" width="18" height="18" fill={i <= stars ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                <svg key={i} viewBox="0 0 24 24" width="14" height="14" fill={i <= stars ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
                   <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               ))}
             </span>
-            <span className="rev-score">{REVIEWS_META.rating.toLocaleString('fr-FR')}/5 · {REVIEWS_META.count} {t('reviews.googleReviews')}</span>
-          </div>
+            <span className="rev-badge-count">{REVIEWS_META.count} {t('reviews.googleReviews')}</span>
+          </a>
         </div>
         <ul className="rev-list">
           {REVIEWS.map(({ author, text }) => (
             <li key={author} className="rev-card">
-              <p className="rev-text">« {text} »</p>
-              <span className="rev-author">{author}</span>
+              <span className="rev-quote" aria-hidden="true">“</span>
+              <p className="rev-text">{text}</p>
+              <div className="rev-footer">
+                <span className="rev-avatar" aria-hidden="true">{author[0]}</span>
+                <span className="rev-author">{author}</span>
+                <span className="rev-src">Google</span>
+              </div>
             </li>
           ))}
         </ul>
@@ -478,7 +484,7 @@ function ContactPage() {
           <div className="contact-map">
             <iframe
               title="Dragonland — Bay 1 Torcy"
-              src="https://maps.google.com/maps?q=Dragonland%2C%2022%20promenade%20du%207%C3%A8me%20Art%2C%2077200%20Torcy&z=16&output=embed"
+              src="https://maps.google.com/maps?q=Dragonland%2C%20promenade%20du%207%C3%A8me%20Art%2C%2077200%20Torcy&z=16&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
