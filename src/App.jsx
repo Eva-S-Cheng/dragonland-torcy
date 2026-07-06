@@ -174,11 +174,12 @@ function HomePage() {
   return (
     <>
       <section className="hero">
+        <span className="hero-watermark" aria-hidden="true">忠誠</span>
         <div className="container">
           <h1>{t('hero.title')}</h1>
           <p>{t('hero.subtitle')}</p>
           <p>{t('hero.note')}</p>
-          <p style={{ marginTop: '1.5rem', display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <p className="hero-cta">
             <a className="btn btn-primary" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
             <a className="btn btn-outline" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
           </p>
