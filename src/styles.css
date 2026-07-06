@@ -39,14 +39,14 @@
   
   @media (prefers-color-scheme: dark) {
     :root {
-      --red: #c05263;
-      --red-hover: #d16b7b;
-      --red-deep: #7e2f3c;
-      --red-soft: #33242a;
-      --red-line: #4d333c;
-      --on-red: #1b1512;
-      --ink: #ece3d6;
-      --ink-soft: #b2a595;
+      --red: #a03648;        /* bordeaux riche, moins rosé */
+      --red-hover: #b44a5c;
+      --red-deep: #6b1f2e;
+      --red-soft: #3a2229;
+      --red-line: #55303a;
+      --on-red: #f8f0e4;     /* texte quasi blanc sur bordeaux */
+      --ink: #f0e8db;
+      --ink-soft: #beb1a1;
       --paper: #1b1512;
       --surface: #262019;
       --line: #3b332a;
