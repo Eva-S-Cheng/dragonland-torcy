@@ -209,7 +209,6 @@ const SIGNATURES = [
 
 function SignatureCarousel() {
   const { t, lang } = useI18n()
-  const isZh = lang.startsWith('zh')
   const scroll = (dir) => {
     const track = document.querySelector('.sig-track')
     if (track) track.scrollBy({ left: dir * (track.clientWidth * 0.7), behavior: 'smooth' })
@@ -226,18 +225,34 @@ function SignatureCarousel() {
         </div>
         <ul className="sig-track">
           {SIGNATURES.map((s) => {
-            const zh = lang === 'zh-Hans' ? s.zhHans : s.zhHant
-            const main = isZh ? zh : lang === 'en' ? s.en : s.fr
-            const sub = isZh ? s.fr : zh
+            const name =
+              lang === 'zh-Hant' ? s.zhHant
+              : lang === 'zh-Hans' ? s.zhHans
+              : lang === 'en' ? s.en
+              : s.fr
             return (
               <li key={s.id} className="sig-card">
-                <div className="sig-img" aria-hidden="true">
-                  {s.img && <img src={s.img} alt="" loading="lazy" />}
+                <div className="sig-img">
+                  <div className="sig-noimg" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="3" />
+                      <circle cx="9" cy="9" r="2" />
+                      <path d="m21 15-3.5-3.5L6 23" />
+                    </svg>
+                  </div>
+                  <img
+                    src={`${import.meta.env.BASE_URL}${s.id}.jpeg`}
+                    alt={name}
+                    loading="lazy"
+                    onError={(e) => e.currentTarget.remove()}
+                  />
                 </div>
                 <div className="sig-body">
-                  <span className="sig-sub">{sub}</span>
-                  <h3>{main}</h3>
-                  <span className="sig-price">{s.price}</span>
+                  <div className="sig-topline">
+                    <span className="sig-code">{s.id}</span>
+                    <span className="sig-price">{s.price}</span>
+                  </div>
+                  <h3>{name}</h3>
                 </div>
               </li>
             )
@@ -308,6 +323,9 @@ function HomePage() {
                 <li>{t('features.pmr')}</li>
                 <li>{t('features.vouchers')}</li>
                 <li>{t('features.takeaway')}</li>
+                <li>{t('features.pets')}</li>
+                <li>{t('features.kids')}</li>
+                <li>{t('features.veggie')}</li>
               </ul>
               <p className="about-events">{t('about.events')}</p>
             </aside>

@@ -56,7 +56,10 @@
     "aircon": "Air-conditioned",
     "pmr": "Wheelchair accessible",
     "vouchers": "Meal vouchers accepted",
-    "takeaway": "Takeaway available"
+    "takeaway": "Takeaway available",
+    "pets": "Pets welcome",
+    "kids": "Kid-friendly",
+    "veggie": "Vegetarian options"
   },
   "status": {
     "open": "Open",

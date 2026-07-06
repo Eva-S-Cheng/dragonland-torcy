@@ -56,7 +56,10 @@
     "aircon": "Salle climatisée",
     "pmr": "Accès PMR",
     "vouchers": "Tickets restaurant acceptés",
-    "takeaway": "Vente à emporter"
+    "takeaway": "Vente à emporter",
+    "pets": "Animaux acceptés",
+    "kids": "Adapté aux enfants",
+    "veggie": "Options végétariennes"
   },
   "status": {
     "open": "Ouvert",

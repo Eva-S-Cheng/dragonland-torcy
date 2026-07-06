@@ -56,7 +56,10 @@
     "aircon": "空调座位",
     "pmr": "无障碍通道",
     "vouchers": "接受餐券",
-    "takeaway": "提供外带"
+    "takeaway": "提供外带",
+    "pets": "宠物友善",
+    "kids": "适合亲子",
+    "veggie": "素食选择"
   },
   "status": {
     "open": "营业中",
