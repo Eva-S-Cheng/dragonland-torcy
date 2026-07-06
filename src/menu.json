@@ -1,286 +1,6 @@
 {
   "categories": [
     {
-      "id": "noodles",
-      "name": {
-        "fr": "Pâtes de riz · Nouilles · Riz",
-        "zhHans": "汤面饭类",
-        "zhHant": "湯麵飯類"
-      },
-      "dishes": [
-        {
-          "id": "MO1",
-          "fr": "Phở, soupe de pâtes de riz au bœuf",
-          "zhHans": "越式牛肉粉",
-          "zhHant": "越式牛肉粉",
-          "variants": [
-            {
-              "fr": "Petit",
-              "zhHans": "小",
-              "zhHant": "小",
-              "price": 13
-            },
-            {
-              "fr": "Grand",
-              "zhHans": "大",
-              "zhHant": "大",
-              "price": 15
-            }
-          ]
-        },
-        {
-          "id": "M1",
-          "fr": "Soupe aux boulettes de bœuf",
-          "zhHans": "牛肉丸",
-          "zhHant": "牛肉丸",
-          "variants": [
-            {
-              "fr": "Pâtes de riz",
-              "zhHans": "裸",
-              "zhHant": "粿",
-              "price": 13
-            },
-            {
-              "fr": "Nouilles",
-              "zhHans": "面",
-              "zhHant": "麵",
-              "price": 13
-            }
-          ]
-        },
-        {
-          "id": "M2",
-          "fr": "Soupe de pâtes de riz « Phnom Penh »",
-          "zhHans": "金边裸条",
-          "zhHant": "金邊粿條",
-          "price": 11,
-          "signature": true
-        },
-        {
-          "id": "M3",
-          "fr": "Soupe de pâtes de riz spéciale maison",
-          "zhHans": "肉设裸条",
-          "zhHant": "肉設粿條",
-          "price": 13
-        },
-        {
-          "id": "M4",
-          "fr": "Soupe de nouilles au porc laqué",
-          "zhHans": "叉烧汤面",
-          "zhHant": "叉燒湯麵",
-          "price": 11
-        },
-        {
-          "id": "M5",
-          "fr": "Soupe de nouilles au canard laqué",
-          "zhHans": "烧鸭汤面",
-          "zhHant": "燒鴨湯麵",
-          "price": 13
-        },
-        {
-          "id": "M6",
-          "fr": "Soupe de pâtes de riz aux fruits de mer",
-          "zhHans": "海鲜粿条",
-          "zhHant": "海鮮粿條",
-          "price": 14
-        },
-        {
-          "id": "M7",
-          "fr": "Soupe de raviolis",
-          "zhHans": "上汤水饺",
-          "zhHant": "上湯水餃",
-          "price": 13
-        },
-        {
-          "id": "M8",
-          "fr": "Soupe de nouilles aux raviolis",
-          "zhHans": "水饺汤面",
-          "zhHant": "水餃湯麵",
-          "price": 13
-        },
-        {
-          "id": "M9",
-          "fr": "Soupe de rouleaux de crêpe de riz du chef",
-          "zhHans": "粘米丸汤",
-          "zhHant": "粘米丸湯",
-          "price": 11
-        },
-        {
-          "id": "M10",
-          "fr": "Soupe de pâtes de riz au bœuf du chef",
-          "zhHans": "牛腩裸条",
-          "zhHant": "牛腩粿條",
-          "price": 13
-        },
-        {
-          "id": "M11",
-          "fr": "Triangle de pâtes de riz aux abats de porc « Teochew »",
-          "zhHans": "潮州裸汁",
-          "zhHant": "潮州粿汁",
-          "price": 13
-        },
-        {
-          "id": "M12",
-          "fr": "Pâtes de riz sautées « Teochew »",
-          "zhHans": "潮州炒河",
-          "zhHant": "潮州炒河",
-          "price": 14
-        },
-        {
-          "id": "M13",
-          "fr": "Pâtes de riz sautées au bœuf (sec)",
-          "zhHans": "干炒牛河",
-          "zhHant": "乾炒牛河",
-          "price": 13
-        },
-        {
-          "id": "M14",
-          "fr": "Pâtes de riz sautées au bœuf et au saté",
-          "zhHans": "沙茶牛河",
-          "zhHant": "沙茶牛河",
-          "price": 13
-        },
-        {
-          "id": "M15",
-          "fr": "Pâtes de riz sautées au bœuf et aux haricots noirs",
-          "zhHans": "豉汁牛河",
-          "zhHant": "豉汁牛河",
-          "price": 13
-        },
-        {
-          "id": "M16",
-          "fr": "Pâtes de riz sautées aux viandes variées et fruits de mer",
-          "zhHans": "什锦炒河",
-          "zhHant": "什錦炒河",
-          "price": 14
-        },
-        {
-          "id": "M17",
-          "fr": "Pâtes de riz sautées aux crevettes",
-          "zhHans": "虾球炒河",
-          "zhHant": "蝦球炒河",
-          "price": 14
-        },
-        {
-          "id": "M18",
-          "fr": "Sauté aux fruits de mer",
-          "zhHans": "海鲜",
-          "zhHant": "海鮮",
-          "variants": [
-            {
-              "fr": "Pâtes de riz",
-              "zhHans": "炒河",
-              "zhHant": "炒河",
-              "price": 14
-            },
-            {
-              "fr": "Nouilles",
-              "zhHans": "炒面",
-              "zhHant": "炒麵",
-              "price": 14
-            }
-          ]
-        },
-        {
-          "id": "M19",
-          "fr": "Vermicelles de riz sautés à la façon de Singapour",
-          "zhHans": "星洲炒米粉",
-          "zhHant": "星洲炒米粉",
-          "price": 14
-        },
-        {
-          "id": "M20",
-          "fr": "Pâtes de riz sautées à la thaïlandaise",
-          "zhHans": "泰式炒裸条",
-          "zhHant": "泰式炒粿條",
-          "price": 14
-        },
-        {
-          "id": "M21",
-          "fr": "Riz Loc-Lac",
-          "zhHans": "禄叻牛饭",
-          "zhHant": "祿叻牛飯",
-          "price": 13,
-          "signature": true,
-          "note": {
-            "fr": "Œuf : supplément 1 €",
-            "zhHans": "加蛋 +1€",
-            "zhHant": "加蛋 +1€"
-          }
-        },
-        {
-          "id": "M22",
-          "fr": "Rouleaux de crêpe de riz sautés « Phnom Penh »",
-          "zhHans": "金边炒粘米丸",
-          "zhHant": "金邊炒粘米丸",
-          "price": 14
-        },
-        {
-          "id": "M23",
-          "fr": "Riz double rôtisserie (porc laqué, canard laqué)",
-          "zhHans": "双拼饭",
-          "zhHant": "雙拼飯",
-          "price": 14
-        },
-        {
-          "id": "M24",
-          "fr": "Riz au canard laqué",
-          "zhHans": "烧鸭饭",
-          "zhHant": "燒鴨飯",
-          "price": 14
-        },
-        {
-          "id": "M25",
-          "fr": "Riz aux viandes variées et fruits de mer",
-          "zhHans": "什锦烩饭",
-          "zhHant": "什錦燴飯",
-          "price": 14
-        },
-        {
-          "id": "M26",
-          "fr": "Riz au bœuf",
-          "zhHans": "牛肉烩饭",
-          "zhHant": "牛肉燴飯",
-          "price": 13
-        },
-        {
-          "id": "M27",
-          "fr": "Riz aux fruits de mer",
-          "zhHans": "海鲜烩饭",
-          "zhHant": "海鮮燴飯",
-          "price": 14
-        },
-        {
-          "id": "M28",
-          "fr": "Riz au poulet à la citronnelle",
-          "zhHans": "香茅鸡饭",
-          "zhHant": "香茅雞飯",
-          "price": 13
-        },
-        {
-          "id": "M29",
-          "fr": "Pâtes de riz sautées aux légumes variés",
-          "zhHans": "罗汉素炒河",
-          "zhHant": "羅漢素炒河",
-          "price": 13
-        },
-        {
-          "id": "M30",
-          "fr": "Riz double rôtisserie (porc laqué, poulet)",
-          "zhHans": "叉鸡饭",
-          "zhHant": "叉雞飯",
-          "price": 13
-        },
-        {
-          "id": "M31",
-          "fr": "Riz au poulet croustillant",
-          "zhHans": "油淋鸡饭",
-          "zhHant": "油淋雞飯",
-          "price": 13
-        }
-      ]
-    },
-    {
       "id": "suggestions",
       "name": {
         "fr": "Nos suggestions",
@@ -606,6 +326,286 @@
           "fr": "Légumes de saison",
           "zhHans": "当令时蔬",
           "zhHant": "當令時蔬",
+          "price": 13
+        }
+      ]
+    },
+    {
+      "id": "noodles",
+      "name": {
+        "fr": "Pâtes de riz · Nouilles · Riz",
+        "zhHans": "汤面饭类",
+        "zhHant": "湯麵飯類"
+      },
+      "dishes": [
+        {
+          "id": "MO1",
+          "fr": "Phở, soupe de pâtes de riz au bœuf",
+          "zhHans": "越式牛肉粉",
+          "zhHant": "越式牛肉粉",
+          "variants": [
+            {
+              "fr": "Petit",
+              "zhHans": "小",
+              "zhHant": "小",
+              "price": 13
+            },
+            {
+              "fr": "Grand",
+              "zhHans": "大",
+              "zhHant": "大",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "id": "M1",
+          "fr": "Soupe aux boulettes de bœuf",
+          "zhHans": "牛肉丸",
+          "zhHant": "牛肉丸",
+          "variants": [
+            {
+              "fr": "Pâtes de riz",
+              "zhHans": "裸",
+              "zhHant": "粿",
+              "price": 13
+            },
+            {
+              "fr": "Nouilles",
+              "zhHans": "面",
+              "zhHant": "麵",
+              "price": 13
+            }
+          ]
+        },
+        {
+          "id": "M2",
+          "fr": "Soupe de pâtes de riz « Phnom Penh »",
+          "zhHans": "金边裸条",
+          "zhHant": "金邊粿條",
+          "price": 11,
+          "signature": true
+        },
+        {
+          "id": "M3",
+          "fr": "Soupe de pâtes de riz spéciale maison",
+          "zhHans": "肉设裸条",
+          "zhHant": "肉設粿條",
+          "price": 13
+        },
+        {
+          "id": "M4",
+          "fr": "Soupe de nouilles au porc laqué",
+          "zhHans": "叉烧汤面",
+          "zhHant": "叉燒湯麵",
+          "price": 11
+        },
+        {
+          "id": "M5",
+          "fr": "Soupe de nouilles au canard laqué",
+          "zhHans": "烧鸭汤面",
+          "zhHant": "燒鴨湯麵",
+          "price": 13
+        },
+        {
+          "id": "M6",
+          "fr": "Soupe de pâtes de riz aux fruits de mer",
+          "zhHans": "海鲜粿条",
+          "zhHant": "海鮮粿條",
+          "price": 14
+        },
+        {
+          "id": "M7",
+          "fr": "Soupe de raviolis",
+          "zhHans": "上汤水饺",
+          "zhHant": "上湯水餃",
+          "price": 13
+        },
+        {
+          "id": "M8",
+          "fr": "Soupe de nouilles aux raviolis",
+          "zhHans": "水饺汤面",
+          "zhHant": "水餃湯麵",
+          "price": 13
+        },
+        {
+          "id": "M9",
+          "fr": "Soupe de rouleaux de crêpe de riz du chef",
+          "zhHans": "粘米丸汤",
+          "zhHant": "粘米丸湯",
+          "price": 11
+        },
+        {
+          "id": "M10",
+          "fr": "Soupe de pâtes de riz au bœuf du chef",
+          "zhHans": "牛腩裸条",
+          "zhHant": "牛腩粿條",
+          "price": 13
+        },
+        {
+          "id": "M11",
+          "fr": "Triangle de pâtes de riz aux abats de porc « Teochew »",
+          "zhHans": "潮州裸汁",
+          "zhHant": "潮州粿汁",
+          "price": 13
+        },
+        {
+          "id": "M12",
+          "fr": "Pâtes de riz sautées « Teochew »",
+          "zhHans": "潮州炒河",
+          "zhHant": "潮州炒河",
+          "price": 14
+        },
+        {
+          "id": "M13",
+          "fr": "Pâtes de riz sautées au bœuf (sec)",
+          "zhHans": "干炒牛河",
+          "zhHant": "乾炒牛河",
+          "price": 13
+        },
+        {
+          "id": "M14",
+          "fr": "Pâtes de riz sautées au bœuf et au saté",
+          "zhHans": "沙茶牛河",
+          "zhHant": "沙茶牛河",
+          "price": 13
+        },
+        {
+          "id": "M15",
+          "fr": "Pâtes de riz sautées au bœuf et aux haricots noirs",
+          "zhHans": "豉汁牛河",
+          "zhHant": "豉汁牛河",
+          "price": 13
+        },
+        {
+          "id": "M16",
+          "fr": "Pâtes de riz sautées aux viandes variées et fruits de mer",
+          "zhHans": "什锦炒河",
+          "zhHant": "什錦炒河",
+          "price": 14
+        },
+        {
+          "id": "M17",
+          "fr": "Pâtes de riz sautées aux crevettes",
+          "zhHans": "虾球炒河",
+          "zhHant": "蝦球炒河",
+          "price": 14
+        },
+        {
+          "id": "M18",
+          "fr": "Sauté aux fruits de mer",
+          "zhHans": "海鲜",
+          "zhHant": "海鮮",
+          "variants": [
+            {
+              "fr": "Pâtes de riz",
+              "zhHans": "炒河",
+              "zhHant": "炒河",
+              "price": 14
+            },
+            {
+              "fr": "Nouilles",
+              "zhHans": "炒面",
+              "zhHant": "炒麵",
+              "price": 14
+            }
+          ]
+        },
+        {
+          "id": "M19",
+          "fr": "Vermicelles de riz sautés à la façon de Singapour",
+          "zhHans": "星洲炒米粉",
+          "zhHant": "星洲炒米粉",
+          "price": 14
+        },
+        {
+          "id": "M20",
+          "fr": "Pâtes de riz sautées à la thaïlandaise",
+          "zhHans": "泰式炒裸条",
+          "zhHant": "泰式炒粿條",
+          "price": 14
+        },
+        {
+          "id": "M21",
+          "fr": "Riz Loc-Lac",
+          "zhHans": "禄叻牛饭",
+          "zhHant": "祿叻牛飯",
+          "price": 13,
+          "signature": true,
+          "note": {
+            "fr": "Œuf : supplément 1 €",
+            "zhHans": "加蛋 +1€",
+            "zhHant": "加蛋 +1€"
+          }
+        },
+        {
+          "id": "M22",
+          "fr": "Rouleaux de crêpe de riz sautés « Phnom Penh »",
+          "zhHans": "金边炒粘米丸",
+          "zhHant": "金邊炒粘米丸",
+          "price": 14
+        },
+        {
+          "id": "M23",
+          "fr": "Riz double rôtisserie (porc laqué, canard laqué)",
+          "zhHans": "双拼饭",
+          "zhHant": "雙拼飯",
+          "price": 14
+        },
+        {
+          "id": "M24",
+          "fr": "Riz au canard laqué",
+          "zhHans": "烧鸭饭",
+          "zhHant": "燒鴨飯",
+          "price": 14
+        },
+        {
+          "id": "M25",
+          "fr": "Riz aux viandes variées et fruits de mer",
+          "zhHans": "什锦烩饭",
+          "zhHant": "什錦燴飯",
+          "price": 14
+        },
+        {
+          "id": "M26",
+          "fr": "Riz au bœuf",
+          "zhHans": "牛肉烩饭",
+          "zhHant": "牛肉燴飯",
+          "price": 13
+        },
+        {
+          "id": "M27",
+          "fr": "Riz aux fruits de mer",
+          "zhHans": "海鲜烩饭",
+          "zhHant": "海鮮燴飯",
+          "price": 14
+        },
+        {
+          "id": "M28",
+          "fr": "Riz au poulet à la citronnelle",
+          "zhHans": "香茅鸡饭",
+          "zhHant": "香茅雞飯",
+          "price": 13
+        },
+        {
+          "id": "M29",
+          "fr": "Pâtes de riz sautées aux légumes variés",
+          "zhHans": "罗汉素炒河",
+          "zhHant": "羅漢素炒河",
+          "price": 13
+        },
+        {
+          "id": "M30",
+          "fr": "Riz double rôtisserie (porc laqué, poulet)",
+          "zhHans": "叉鸡饭",
+          "zhHant": "叉雞飯",
+          "price": 13
+        },
+        {
+          "id": "M31",
+          "fr": "Riz au poulet croustillant",
+          "zhHans": "油淋鸡饭",
+          "zhHant": "油淋雞飯",
           "price": 13
         }
       ]

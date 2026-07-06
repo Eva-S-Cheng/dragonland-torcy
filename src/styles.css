@@ -996,34 +996,38 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 0.8rem;
   }
   
-  .menu-card {
+  @media (max-width: 480px) {
+    .menu-grid { grid-template-columns: 1fr; }
+  }
+  
+  /* Ligne compacte : hauteur FIXE identique pour toutes, image carrée à gauche */
+  .menu-row {
+    display: flex;
+    align-items: stretch;
+    height: 84px;
     background: var(--surface);
-    border-radius: var(--radius);
+    border-radius: 12px;
     box-shadow: var(--shadow-soft);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
   }
   
-  /* Emplacement photo 1:1, même logique que le carrousel mais en clair */
   .menu-img {
     position: relative;
-    aspect-ratio: 1 / 1;
-    margin: 10px 10px 0;
-    border-radius: calc(var(--radius) - 6px);
-    overflow: hidden;
+    flex: none;
+    width: 84px;
+    height: 84px;
     background: color-mix(in srgb, var(--ink) 6%, var(--surface));
   }
   
   .menu-noimg {
     position: absolute;
-    inset: 8px;
+    inset: 6px;
     border: 1.5px dashed var(--line);
-    border-radius: calc(var(--radius) - 8px);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1039,61 +1043,73 @@
     display: block;
   }
   
-  .menu-body {
-    padding: 0.85rem 1rem 1.1rem;
+  .menu-main {
+    flex: 1;
+    min-width: 0;
+    padding: 0.4rem 0.9rem;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
-    flex: 1;
+    justify-content: center;
+    gap: 0.15rem;
   }
   
-  .menu-topline {
+  .menu-line {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.6rem;
+    align-items: baseline;
+    gap: 0.5rem;
+    min-width: 0;
   }
   
   .menu-code {
+    flex: none;
     border: 1px solid var(--red-line);
     color: var(--red);
     border-radius: var(--radius-pill);
-    padding: 0.05rem 0.55rem;
-    font-size: 0.78rem;
+    padding: 0 0.45rem;
+    font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
   }
   
-  .menu-price { color: var(--red); font-weight: 700; }
-  
-  .menu-body h3 {
+  .menu-line h3 {
+    flex: 1;
+    min-width: 0;
     margin: 0;
-    font-size: 0.98rem;
-    line-height: 1.3;
-    font-weight: 700;
-  }
-  
-  .menu-variants {
-    list-style: none;
-    margin: 0.35rem 0 0;
-    padding: 0.5rem 0 0;
-    border-top: 1px solid var(--line);
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
     font-size: 0.9rem;
+    line-height: 1.25;
+    font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   
-  .menu-variants li {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.75rem;
+  .menu-price {
+    flex: none;
+    margin-left: auto;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Variations en petit, une seule ligne */
+  .menu-variants {
+    margin: 0;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .menu-note {
-    margin: 0.35rem 0 0;
-    font-size: 0.82rem;
+    margin: 0;
+    font-size: 0.72rem;
     color: var(--ink-soft);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .menu-allergens {
