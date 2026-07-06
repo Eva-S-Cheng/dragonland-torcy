@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "首頁",
+    "menu": "菜單",
+    "contact": "聯絡與訂位"
+  },
+  "cta": {
+    "takeaway": "外帶",
+    "delivery": "外送",
+    "call": "致電",
+    "book": "訂位"
+  },
+  "hero": {
+    "title": "忠誠 Dragonland",
+    "subtitle": "托爾西的中式、泰式與越式料理",
+    "note": "自家製作 — 堂食、外帶或外送"
+  },
+  "hours": {
+    "title": "營業時間",
+    "mon": "星期一",
+    "tue": "星期二",
+    "wed": "星期三",
+    "thu": "星期四",
+    "fri": "星期五",
+    "sat": "星期六",
+    "sun": "星期日",
+    "closed": "休息",
+    "lunch": "午市",
+    "dinner": "晚市"
+  },
+  "contact": {
+    "title": "餐廳位置",
+    "address": "22 promenade du 7ᵉ Art, Bay 1 購物中心, 77200 Torcy, 法國",
+    "directions": "路線",
+    "phone": "電話",
+    "bookNote": "電話訂位"
+  },
+  "menu": {
+    "title": "菜單",
+    "wip": "完整菜單即將上線。歡迎先外帶或外送。"
+  },
+  "footer": {
+    "rights": "版權所有"
+  }
+}

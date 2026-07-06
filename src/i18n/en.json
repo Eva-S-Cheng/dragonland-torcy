@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "contact": "Contact & Booking"
+  },
+  "cta": {
+    "takeaway": "Takeaway",
+    "delivery": "Delivery",
+    "call": "Call",
+    "book": "Book a table"
+  },
+  "hero": {
+    "title": "Dragonland",
+    "subtitle": "Chinese, Thai and Vietnamese cuisine in Torcy",
+    "note": "Homemade dishes — dine in, takeaway or delivery"
+  },
+  "hours": {
+    "title": "Opening hours",
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday",
+    "closed": "Closed",
+    "lunch": "Lunch",
+    "dinner": "Dinner"
+  },
+  "contact": {
+    "title": "Find us",
+    "address": "22 promenade du 7ᵉ Art, Bay 1 shopping centre, 77200 Torcy, France",
+    "directions": "Directions",
+    "phone": "Phone",
+    "bookNote": "Bookings by phone"
+  },
+  "menu": {
+    "title": "Menu",
+    "wip": "The full menu is coming soon. Meanwhile, order takeaway or delivery."
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

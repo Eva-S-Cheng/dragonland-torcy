@@ -1,0 +1,45 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "menu": "La carte",
+    "contact": "Contact & Réservation"
+  },
+  "cta": {
+    "takeaway": "À emporter",
+    "delivery": "Livraison",
+    "call": "Appeler",
+    "book": "Réserver"
+  },
+  "hero": {
+    "title": "Dragonland",
+    "subtitle": "Cuisine chinoise, thaïlandaise et vietnamienne à Torcy",
+    "note": "Plats faits maison — sur place, à emporter ou en livraison"
+  },
+  "hours": {
+    "title": "Horaires",
+    "mon": "Lundi",
+    "tue": "Mardi",
+    "wed": "Mercredi",
+    "thu": "Jeudi",
+    "fri": "Vendredi",
+    "sat": "Samedi",
+    "sun": "Dimanche",
+    "closed": "Fermé",
+    "lunch": "Midi",
+    "dinner": "Soir"
+  },
+  "contact": {
+    "title": "Nous trouver",
+    "address": "22 promenade du 7ᵉ Art, Centre commercial Bay 1, 77200 Torcy",
+    "directions": "Itinéraire",
+    "phone": "Téléphone",
+    "bookNote": "Réservation par téléphone"
+  },
+  "menu": {
+    "title": "La carte",
+    "wip": "La carte arrive bientôt. En attendant, commandez à emporter ou en livraison."
+  },
+  "footer": {
+    "rights": "Tous droits réservés"
+  }
+}
