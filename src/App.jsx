@@ -8,15 +8,15 @@ const RESTAURANT = {
   takeawayUrl: 'https://takeaway.tablemi.com/', // TODO: lien exact TableMi Dragonland
   ubereatsUrl: 'https://www.ubereats.com/', // TODO: lien exact page Uber Eats
   mapsUrl: 'https://maps.google.com/?q=Dragonland+Bay+1+Torcy',
-  // Horaires : null = fermé
+  // Horaires : format neutre HH:MM, mis en forme par langue au rendu. null = fermé
   hours: [
-    { day: 'mon', lunch: '11h45 – 14h30', dinner: '18h30 – 22h25' },
+    { day: 'mon', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
     { day: 'tue', lunch: null, dinner: null },
-    { day: 'wed', lunch: '11h45 – 14h30', dinner: '18h30 – 22h25' },
-    { day: 'thu', lunch: '11h45 – 14h30', dinner: '18h30 – 22h25' },
-    { day: 'fri', lunch: '11h45 – 14h30', dinner: '18h30 – 22h25' },
-    { day: 'sat', lunch: '11h45 – 14h30', dinner: '18h45 – 22h25' },
-    { day: 'sun', lunch: '11h45 – 14h30', dinner: '18h45 – 22h25' },
+    { day: 'wed', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
+    { day: 'thu', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
+    { day: 'fri', lunch: ['11:45', '14:30'], dinner: ['18:30', '22:25'] },
+    { day: 'sat', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:25'] },
+    { day: 'sun', lunch: ['11:45', '14:30'], dinner: ['18:45', '22:25'] },
   ],
 }
 
@@ -85,8 +85,25 @@ function CtaBar() {
   )
 }
 
+// Mise en forme des horaires selon la langue :
+// fr → 11h45 ; en → 11:45 am ; zh → 11:45（24h, usage courant）
+function formatTime(hhmm, lang) {
+  const [h, m] = hhmm.split(':').map(Number)
+  if (lang === 'fr') return `${h}h${String(m).padStart(2, '0')}`
+  if (lang === 'en') {
+    const ampm = h < 12 ? 'am' : 'pm'
+    const h12 = h % 12 === 0 ? 12 : h % 12
+    return `${h12}:${String(m).padStart(2, '0')} ${ampm}`
+  }
+  return hhmm
+}
+
+function formatRange(range, lang) {
+  return `${formatTime(range[0], lang)} – ${formatTime(range[1], lang)}`
+}
+
 function HoursTable() {
-  const { t } = useI18n()
+  const { t, lang } = useI18n()
   return (
     <table className="hours-table">
       <tbody>
@@ -95,8 +112,8 @@ function HoursTable() {
             <td>{t(`hours.${day}`)}</td>
             {lunch ? (
               <>
-                <td>{lunch}</td>
-                <td>{dinner}</td>
+                <td>{formatRange(lunch, lang)}</td>
+                <td>{formatRange(dinner, lang)}</td>
               </>
             ) : (
               <td className="closed" colSpan={2}>{t('hours.closed')}</td>
