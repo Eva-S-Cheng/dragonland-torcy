@@ -5,7 +5,8 @@
       "name": {
         "fr": "Nos suggestions",
         "zhHans": "特别菜",
-        "zhHant": "特別菜"
+        "zhHant": "特別菜",
+        "en": "Chef's suggestions"
       },
       "dishes": [
         {
@@ -14,14 +15,16 @@
           "zhHans": "潮州炸蟹枣",
           "zhHant": "潮州炸蟹棗",
           "price": 9,
-          "signature": true
+          "signature": true,
+          "en": "Teochew fried crab balls, 4 pcs"
         },
         {
           "id": "S2",
           "fr": "Boulettes de crevettes frites (Teochew), 4 pièces",
           "zhHans": "潮州炸虾枣",
           "zhHant": "潮州炸蝦棗",
-          "price": 9
+          "price": 9,
+          "en": "Teochew fried prawn balls, 4 pcs"
         },
         {
           "id": "S3",
@@ -29,126 +32,144 @@
           "zhHans": "潮州芥菜鸡",
           "zhHant": "潮州芥菜雞",
           "price": 13,
-          "signature": true
+          "signature": true,
+          "en": "Teochew kai-cai chicken"
         },
         {
           "id": "S4",
           "fr": "Assiette de méduse froide",
           "zhHans": "冷盘海蜇皮",
           "zhHant": "冷盤海蜇皮",
-          "price": 15
+          "price": 15,
+          "en": "Cold jellyfish platter"
         },
         {
           "id": "S5",
           "fr": "Poulet vapeur du chef",
           "zhHans": "贵妃鸡",
           "zhHant": "貴妃雞",
-          "price": 13
+          "price": 13,
+          "en": "Chef's steamed chicken"
         },
         {
           "id": "S8",
           "fr": "Salade de pattes de poulet à la façon cantonaise",
           "zhHans": "中式凉拌凤爪",
           "zhHant": "中式涼拌鳳爪",
-          "price": 12
+          "price": 12,
+          "en": "Cantonese-style chicken feet salad"
         },
         {
           "id": "S10",
           "fr": "Grosses crevettes grillées à la sauce soja du chef",
           "zhHans": "豉油皇煎大虾",
           "zhHant": "豉油皇煎大蝦",
-          "price": 21
+          "price": 21,
+          "en": "Grilled king prawns in chef's soy sauce"
         },
         {
           "id": "S11",
           "fr": "Travers de porc « Kin-Do » à la façon cantonaise",
           "zhHans": "京都肉排",
           "zhHant": "京都肉排",
-          "price": 14
+          "price": 14,
+          "en": "“Kin-Do” Cantonese-style pork ribs"
         },
         {
           "id": "S12",
           "fr": "Travers de porc grillés au sel et au poivre",
           "zhHans": "椒盐肉排",
           "zhHant": "椒鹽肉排",
-          "price": 14
+          "price": 14,
+          "en": "Grilled salt & pepper pork ribs"
         },
         {
           "id": "S15",
           "fr": "Grosses crevettes grillées du chef",
           "zhHans": "干煎虾球",
           "zhHant": "乾煎蝦球",
-          "price": 21
+          "price": 21,
+          "en": "Chef's grilled king prawns"
         },
         {
           "id": "S16",
           "fr": "Tripes sautées aux légumes salés",
           "zhHans": "味菜炒大肠",
           "zhHant": "味菜炒大腸",
-          "price": 13
+          "price": 13,
+          "en": "Stir-fried tripe with pickled vegetables"
         },
         {
           "id": "S17",
           "fr": "Langue de canard au sel et au poivre",
           "zhHans": "椒盐鸭舌",
           "zhHant": "椒鹽鴨舌",
-          "price": 15
+          "price": 15,
+          "en": "Salt & pepper duck tongues"
         },
         {
           "id": "S18",
           "fr": "Kai-Lan sauté nature",
           "zhHans": "炒介兰",
           "zhHant": "炒介蘭",
-          "price": 12
+          "price": 12,
+          "en": "Plain stir-fried kai-lan"
         },
         {
           "id": "S19",
           "fr": "Tofu sauté au sel et au poivre",
           "zhHans": "椒盐豆腐",
           "zhHant": "椒鹽豆腐",
-          "price": 13
+          "price": 13,
+          "en": "Salt & pepper fried tofu"
         },
         {
           "id": "S20",
           "fr": "Crabe en mue au sel et au poivre",
           "zhHans": "椒盐软壳蟹",
           "zhHant": "椒鹽軟殼蟹",
-          "price": 20
+          "price": 20,
+          "en": "Salt & pepper soft-shell crab"
         },
         {
           "id": "S21",
           "fr": "Poisson entier au basilic",
           "zhHans": "金不换全鱼",
           "zhHant": "金不換全魚",
-          "price": 25
+          "price": 25,
+          "en": "Whole fish with basil"
         },
         {
           "id": "S22",
           "fr": "Poisson entier à la sauce aigre-douce",
           "zhHans": "五柳全鱼",
           "zhHant": "五柳全魚",
-          "price": 25
+          "price": 25,
+          "en": "Whole fish in sweet & sour sauce"
         },
         {
           "id": "S23",
           "fr": "Poisson à la sauce du chef",
           "zhHans": "律汁煎全鱼",
           "zhHant": "律汁煎全魚",
-          "price": 25
+          "price": 25,
+          "en": "Fish in chef's sauce"
         },
         {
           "id": "S24",
           "fr": "Turbot à la vapeur ou aux haricots noirs",
           "zhHans": "清蒸/豉汁啄布鱼",
           "zhHant": "清蒸/豉汁啄布魚",
-          "price": 62
+          "price": 62,
+          "en": "Steamed turbot, plain or with black beans"
         },
         {
           "id": "S25",
           "fr": "Turbot frit au sel et au poivre (entier)",
           "zhHans": "椒盐啄布鱼",
           "zhHant": "椒鹽啄布魚",
-          "price": 62
+          "price": 62,
+          "en": "Salt & pepper fried turbot (whole)"
         }
       ]
     },
@@ -157,7 +178,8 @@
       "name": {
         "fr": "Nos spécialités",
         "zhHans": "特别介绍",
-        "zhHant": "特別介紹"
+        "zhHant": "特別介紹",
+        "en": "Our specialities"
       },
       "dishes": [
         {
@@ -165,14 +187,16 @@
           "fr": "Galette d'huître poêlée",
           "zhHans": "潮州蚝烙",
           "zhHant": "潮州蠔烙",
-          "price": 16
+          "price": 16,
+          "en": "Pan-fried oyster omelette"
         },
         {
           "id": "A3",
           "fr": "Travers de porc sautés au jaune d'œuf de canard",
           "zhHans": "金沙肉排",
           "zhHant": "金沙肉排",
-          "price": 16
+          "price": 16,
+          "en": "Pork ribs with salted duck egg yolk"
         },
         {
           "id": "A4",
@@ -180,91 +204,104 @@
           "zhHans": "金沙大虾",
           "zhHant": "金沙大蝦",
           "price": 21,
-          "signature": true
+          "signature": true,
+          "en": "King prawns with salted duck egg yolk"
         },
         {
           "id": "A5",
           "fr": "Cuisses de cailles sautées au jaune d'œuf de canard",
           "zhHans": "金沙鹌鹑腿",
           "zhHant": "金沙鵪鶉腿",
-          "price": 17
+          "price": 17,
+          "en": "Quail legs with salted duck egg yolk"
         },
         {
           "id": "A7",
           "fr": "Cuisses de cailles au sel et au poivre",
           "zhHans": "椒盐鹌鹑腿",
           "zhHant": "椒鹽鵪鶉腿",
-          "price": 17
+          "price": 17,
+          "en": "Salt & pepper quail legs"
         },
         {
           "id": "A8",
           "fr": "Aubergines et poivrons farcis aux crevettes et haricots noirs",
           "zhHans": "豉汁酿双宝",
           "zhHant": "豉汁釀雙寶",
-          "price": 18
+          "price": 18,
+          "en": "Stuffed aubergine & peppers with prawns, black bean sauce"
         },
         {
           "id": "A9",
           "fr": "Aubergines et poivrons farcis aux crevettes, sel et poivre",
           "zhHans": "椒盐酿双宝",
           "zhHant": "椒鹽釀雙寶",
-          "price": 18
+          "price": 18,
+          "en": "Stuffed aubergine & peppers with prawns, salt & pepper"
         },
         {
           "id": "A10",
           "fr": "Feuilles de pâte de soja farcies aux crevettes et légumes en beignet",
           "zhHans": "香脆腐皮卷",
           "zhHant": "香脆腐皮卷",
-          "price": 18
+          "price": 18,
+          "en": "Crispy beancurd rolls stuffed with prawns and vegetables"
         },
         {
           "id": "A11",
           "fr": "Coquilles St-Jacques sautées aux haricots miels",
           "zhHans": "蜜豆炒干贝",
           "zhHant": "蜜豆炒干貝",
-          "price": 18
+          "price": 18,
+          "en": "Scallops stir-fried with honey beans"
         },
         {
           "id": "A13",
           "fr": "Tofu farci aux St-Jacques à la vapeur (haricots noirs)",
           "zhHans": "干贝蒸豆腐",
           "zhHant": "干貝蒸豆腐",
-          "price": 18
+          "price": 18,
+          "en": "Steamed tofu stuffed with scallops (black beans)"
         },
         {
           "id": "A14",
           "fr": "Tofu farci aux crevettes à la vapeur",
           "zhHans": "虾胶蒸豆腐",
           "zhHant": "蝦膠蒸豆腐",
-          "price": 18
+          "price": 18,
+          "en": "Steamed tofu stuffed with prawns"
         },
         {
           "id": "A15",
           "fr": "Racines de lotus et dong chong xia cao au porc fumé",
           "zhHans": "莲藕夏虫草腊肉",
           "zhHant": "蓮藕夏蟲草臘肉",
-          "price": 17
+          "price": 17,
+          "en": "Lotus root and cordyceps flower with smoked pork"
         },
         {
           "id": "A18",
           "fr": "Coquilles St-Jacques sautées au jaune d'œuf de canard",
           "zhHans": "金沙干贝",
           "zhHant": "金沙干貝",
-          "price": 21
+          "price": 21,
+          "en": "Scallops with salted duck egg yolk"
         },
         {
           "id": "A22",
           "fr": "Homard au tofu à la vapeur",
           "zhHans": "龙虾蒸豆腐",
           "zhHant": "龍蝦蒸豆腐",
-          "price": 48
+          "price": 48,
+          "en": "Steamed lobster with tofu"
         },
         {
           "id": "A23",
           "fr": "Homard sauté au gingembre et à la ciboulette",
           "zhHans": "姜葱炒龙虾",
           "zhHant": "薑蔥炒龍蝦",
-          "price": 48
+          "price": 48,
+          "en": "Lobster with ginger and spring onion"
         },
         {
           "id": "A24",
@@ -272,14 +309,16 @@
           "zhHans": "椒盐炒龙虾",
           "zhHant": "椒鹽炒龍蝦",
           "price": 48,
-          "signature": true
+          "signature": true,
+          "en": "Salt & pepper lobster"
         },
         {
           "id": "A25",
           "fr": "Homard sauté aux nouilles frites",
           "zhHans": "龙虾炒伊面",
           "zhHant": "龍蝦炒伊麵",
-          "price": 52
+          "price": 52,
+          "en": "Lobster with fried noodles"
         },
         {
           "id": "A29",
@@ -291,42 +330,49 @@
               "fr": "Petit",
               "zhHans": "小",
               "zhHant": "小",
-              "price": 13
+              "price": 13,
+              "en": "Small"
             },
             {
               "fr": "Moyen",
               "zhHans": "中",
               "zhHant": "中",
-              "price": 18
+              "price": 18,
+              "en": "Medium"
             },
             {
               "fr": "Grand",
               "zhHans": "大",
               "zhHant": "大",
-              "price": 22
+              "price": 22,
+              "en": "Large"
             }
-          ]
+          ],
+          "en": "Spinach and crab-meat soup (Tai-Chi)"
         },
         {
           "id": "A30",
           "fr": "Bar au gingembre et à la ciboulette à la vapeur",
           "zhHans": "清蒸鲈鱼",
           "zhHant": "清蒸鱸魚",
-          "price": 35
+          "price": 35,
+          "en": "Steamed sea bass with ginger and spring onion"
         },
         {
           "id": "A31",
           "fr": "Bar frit à la sauce de basilic",
           "zhHans": "金不换鲈鱼",
           "zhHant": "金不換鱸魚",
-          "price": 35
+          "price": 35,
+          "en": "Fried sea bass with basil sauce"
         },
         {
           "id": "A32",
           "fr": "Légumes de saison",
           "zhHans": "当令时蔬",
           "zhHant": "當令時蔬",
-          "price": 13
+          "price": 13,
+          "en": "Seasonal vegetables"
         }
       ]
     },
@@ -335,7 +381,8 @@
       "name": {
         "fr": "Pâtes de riz · Nouilles · Riz",
         "zhHans": "汤面饭类",
-        "zhHant": "湯麵飯類"
+        "zhHant": "湯麵飯類",
+        "en": "Rice noodles · Noodles · Rice"
       },
       "dishes": [
         {
@@ -348,15 +395,18 @@
               "fr": "Petit",
               "zhHans": "小",
               "zhHant": "小",
-              "price": 13
+              "price": 13,
+              "en": "Small"
             },
             {
               "fr": "Grand",
               "zhHans": "大",
               "zhHant": "大",
-              "price": 15
+              "price": 15,
+              "en": "Large"
             }
-          ]
+          ],
+          "en": "Phở, beef rice-noodle soup"
         },
         {
           "id": "M1",
@@ -368,15 +418,18 @@
               "fr": "Pâtes de riz",
               "zhHans": "裸",
               "zhHant": "粿",
-              "price": 13
+              "price": 13,
+              "en": "Rice noodles"
             },
             {
               "fr": "Nouilles",
               "zhHans": "面",
               "zhHant": "麵",
-              "price": 13
+              "price": 13,
+              "en": "Egg noodles"
             }
-          ]
+          ],
+          "en": "Beef ball soup"
         },
         {
           "id": "M2",
@@ -384,112 +437,128 @@
           "zhHans": "金边裸条",
           "zhHant": "金邊粿條",
           "price": 11,
-          "signature": true
+          "signature": true,
+          "en": "“Phnom Penh” rice-noodle soup"
         },
         {
           "id": "M3",
           "fr": "Soupe de pâtes de riz spéciale maison",
           "zhHans": "肉设裸条",
           "zhHant": "肉設粿條",
-          "price": 13
+          "price": 13,
+          "en": "House special rice-noodle soup"
         },
         {
           "id": "M4",
           "fr": "Soupe de nouilles au porc laqué",
           "zhHans": "叉烧汤面",
           "zhHant": "叉燒湯麵",
-          "price": 11
+          "price": 11,
+          "en": "Noodle soup with BBQ pork"
         },
         {
           "id": "M5",
           "fr": "Soupe de nouilles au canard laqué",
           "zhHans": "烧鸭汤面",
           "zhHant": "燒鴨湯麵",
-          "price": 13
+          "price": 13,
+          "en": "Noodle soup with roast duck"
         },
         {
           "id": "M6",
           "fr": "Soupe de pâtes de riz aux fruits de mer",
           "zhHans": "海鲜粿条",
           "zhHant": "海鮮粿條",
-          "price": 14
+          "price": 14,
+          "en": "Seafood rice-noodle soup"
         },
         {
           "id": "M7",
           "fr": "Soupe de raviolis",
           "zhHans": "上汤水饺",
           "zhHant": "上湯水餃",
-          "price": 13
+          "price": 13,
+          "en": "Dumpling soup"
         },
         {
           "id": "M8",
           "fr": "Soupe de nouilles aux raviolis",
           "zhHans": "水饺汤面",
           "zhHant": "水餃湯麵",
-          "price": 13
+          "price": 13,
+          "en": "Noodle soup with dumplings"
         },
         {
           "id": "M9",
           "fr": "Soupe de rouleaux de crêpe de riz du chef",
           "zhHans": "粘米丸汤",
           "zhHant": "粘米丸湯",
-          "price": 11
+          "price": 11,
+          "en": "Chef's rice-roll soup"
         },
         {
           "id": "M10",
           "fr": "Soupe de pâtes de riz au bœuf du chef",
           "zhHans": "牛腩裸条",
           "zhHant": "牛腩粿條",
-          "price": 13
+          "price": 13,
+          "en": "Chef's beef rice-noodle soup"
         },
         {
           "id": "M11",
           "fr": "Triangle de pâtes de riz aux abats de porc « Teochew »",
           "zhHans": "潮州裸汁",
           "zhHant": "潮州粿汁",
-          "price": 13
+          "price": 13,
+          "en": "Teochew rice-noodle triangles with pork offal"
         },
         {
           "id": "M12",
           "fr": "Pâtes de riz sautées « Teochew »",
           "zhHans": "潮州炒河",
           "zhHant": "潮州炒河",
-          "price": 14
+          "price": 14,
+          "en": "Teochew fried rice noodles"
         },
         {
           "id": "M13",
           "fr": "Pâtes de riz sautées au bœuf (sec)",
           "zhHans": "干炒牛河",
           "zhHant": "乾炒牛河",
-          "price": 13
+          "price": 13,
+          "en": "Dry-fried rice noodles with beef"
         },
         {
           "id": "M14",
           "fr": "Pâtes de riz sautées au bœuf et au saté",
           "zhHans": "沙茶牛河",
           "zhHant": "沙茶牛河",
-          "price": 13
+          "price": 13,
+          "en": "Fried rice noodles with beef and satay"
         },
         {
           "id": "M15",
           "fr": "Pâtes de riz sautées au bœuf et aux haricots noirs",
           "zhHans": "豉汁牛河",
           "zhHant": "豉汁牛河",
-          "price": 13
+          "price": 13,
+          "en": "Fried rice noodles with beef and black beans"
         },
         {
           "id": "M16",
           "fr": "Pâtes de riz sautées aux viandes variées et fruits de mer",
           "zhHans": "什锦炒河",
           "zhHant": "什錦炒河",
-          "price": 14
+          "price": 14,
+          "en": "Fried rice noodles with mixed meat and seafood"
         },
         {
           "id": "M17",
           "fr": "Pâtes de riz sautées aux crevettes",
           "zhHans": "虾球炒河",
           "zhHant": "蝦球炒河",
-          "price": 14
+          "price": 14,
+          "en": "Fried rice noodles with prawns"
         },
         {
           "id": "M18",
@@ -501,29 +570,34 @@
               "fr": "Pâtes de riz",
               "zhHans": "炒河",
               "zhHant": "炒河",
-              "price": 14
+              "price": 14,
+              "en": "Rice noodles"
             },
             {
               "fr": "Nouilles",
               "zhHans": "炒面",
               "zhHant": "炒麵",
-              "price": 14
+              "price": 14,
+              "en": "Egg noodles"
             }
-          ]
+          ],
+          "en": "Seafood stir-fry"
         },
         {
           "id": "M19",
           "fr": "Vermicelles de riz sautés à la façon de Singapour",
           "zhHans": "星洲炒米粉",
           "zhHant": "星洲炒米粉",
-          "price": 14
+          "price": 14,
+          "en": "Singapore-style fried rice vermicelli"
         },
         {
           "id": "M20",
           "fr": "Pâtes de riz sautées à la thaïlandaise",
           "zhHans": "泰式炒裸条",
           "zhHant": "泰式炒粿條",
-          "price": 14
+          "price": 14,
+          "en": "Thai-style fried rice noodles"
         },
         {
           "id": "M21",
@@ -535,78 +609,90 @@
           "note": {
             "fr": "Œuf : supplément 1 €",
             "zhHans": "加蛋 +1€",
-            "zhHant": "加蛋 +1€"
-          }
+            "zhHant": "加蛋 +1€",
+            "en": "Fried egg: +€1"
+          },
+          "en": "Loc-Lac beef rice"
         },
         {
           "id": "M22",
           "fr": "Rouleaux de crêpe de riz sautés « Phnom Penh »",
           "zhHans": "金边炒粘米丸",
           "zhHant": "金邊炒粘米丸",
-          "price": 14
+          "price": 14,
+          "en": "“Phnom Penh” fried rice rolls"
         },
         {
           "id": "M23",
           "fr": "Riz double rôtisserie (porc laqué, canard laqué)",
           "zhHans": "双拼饭",
           "zhHant": "雙拼飯",
-          "price": 14
+          "price": 14,
+          "en": "Rice with two roasts (BBQ pork, roast duck)"
         },
         {
           "id": "M24",
           "fr": "Riz au canard laqué",
           "zhHans": "烧鸭饭",
           "zhHant": "燒鴨飯",
-          "price": 14
+          "price": 14,
+          "en": "Rice with roast duck"
         },
         {
           "id": "M25",
           "fr": "Riz aux viandes variées et fruits de mer",
           "zhHans": "什锦烩饭",
           "zhHant": "什錦燴飯",
-          "price": 14
+          "price": 14,
+          "en": "Rice with mixed meat and seafood"
         },
         {
           "id": "M26",
           "fr": "Riz au bœuf",
           "zhHans": "牛肉烩饭",
           "zhHant": "牛肉燴飯",
-          "price": 13
+          "price": 13,
+          "en": "Rice with beef"
         },
         {
           "id": "M27",
           "fr": "Riz aux fruits de mer",
           "zhHans": "海鲜烩饭",
           "zhHant": "海鮮燴飯",
-          "price": 14
+          "price": 14,
+          "en": "Rice with seafood"
         },
         {
           "id": "M28",
           "fr": "Riz au poulet à la citronnelle",
           "zhHans": "香茅鸡饭",
           "zhHant": "香茅雞飯",
-          "price": 13
+          "price": 13,
+          "en": "Rice with lemongrass chicken"
         },
         {
           "id": "M29",
           "fr": "Pâtes de riz sautées aux légumes variés",
           "zhHans": "罗汉素炒河",
           "zhHant": "羅漢素炒河",
-          "price": 13
+          "price": 13,
+          "en": "Fried rice noodles with mixed vegetables"
         },
         {
           "id": "M30",
           "fr": "Riz double rôtisserie (porc laqué, poulet)",
           "zhHans": "叉鸡饭",
           "zhHant": "叉雞飯",
-          "price": 13
+          "price": 13,
+          "en": "Rice with two roasts (BBQ pork, chicken)"
         },
         {
           "id": "M31",
           "fr": "Riz au poulet croustillant",
           "zhHans": "油淋鸡饭",
           "zhHant": "油淋雞飯",
-          "price": 13
+          "price": 13,
+          "en": "Rice with crispy chicken"
         }
       ]
     },
@@ -615,7 +701,8 @@
       "name": {
         "fr": "Cuisine à la vapeur",
         "zhHans": "自制精美点心",
-        "zhHant": "自製精美點心"
+        "zhHant": "自製精美點心",
+        "en": "Dim sum (steamed)"
       },
       "dishes": [
         {
@@ -624,105 +711,120 @@
           "zhHans": "羊城虾饺",
           "zhHant": "羊城蝦餃",
           "price": 8.5,
-          "signature": true
+          "signature": true,
+          "en": "Prawn dumplings (har gow)"
         },
         {
           "id": "V3",
           "fr": "Bouchées au porc (Siu-Mai)",
           "zhHans": "烧麦",
           "zhHant": "燒賣",
-          "price": 7
+          "price": 7,
+          "en": "Pork dumplings (siu mai)"
         },
         {
           "id": "V4",
           "fr": "Bouchées aux crevettes (Sia-Mai)",
           "zhHans": "虾烧麦",
           "zhHant": "蝦燒賣",
-          "price": 8.5
+          "price": 8.5,
+          "en": "Prawn siu mai"
         },
         {
           "id": "V7",
           "fr": "Raviolis au poulet",
           "zhHans": "鸡冠饺",
           "zhHant": "雞冠餃",
-          "price": 7
+          "price": 7,
+          "en": "Chicken dumplings"
         },
         {
           "id": "V11",
           "fr": "Rouleaux à la sauce d'huître",
           "zhHans": "蚝油鲜竹卷",
           "zhHant": "蠔油鮮竹卷",
-          "price": 8
+          "price": 8,
+          "en": "Beancurd rolls in oyster sauce"
         },
         {
           "id": "V12",
           "fr": "Travers de porc aux haricots noirs",
           "zhHans": "豉汁蒸排骨",
           "zhHant": "豉汁蒸排骨",
-          "price": 7
+          "price": 7,
+          "en": "Pork ribs with black beans"
         },
         {
           "id": "V13",
           "fr": "Pattes de poulet aux haricots noirs",
           "zhHans": "豉汁蒸凤爪",
           "zhHant": "豉汁蒸鳳爪",
-          "price": 8
+          "price": 8,
+          "en": "Chicken feet with black beans"
         },
         {
           "id": "V14",
           "fr": "Raviolis au porc grillés",
           "zhHans": "上海锅贴",
           "zhHant": "上海鍋貼",
-          "price": 7
+          "price": 7,
+          "en": "Pan-fried pork dumplings"
         },
         {
           "id": "V15",
           "fr": "Petites brioches au porc",
           "zhHans": "小笼包",
           "zhHant": "小籠包",
-          "price": 7
+          "price": 7,
+          "en": "Small pork buns (xiao long bao)"
         },
         {
           "id": "V16",
           "fr": "Raviolis de crevettes frits",
           "zhHans": "龙虾角",
           "zhHant": "龍蝦角",
-          "price": 10
+          "price": 10,
+          "en": "Fried prawn dumplings"
         },
         {
           "id": "V18",
           "fr": "Assortiment à la vapeur (6 pièces)",
           "zhHans": "什锦点心",
           "zhHant": "什錦點心",
-          "price": 10
+          "price": 10,
+          "en": "Steamed assortment (6 pcs)"
         },
         {
           "id": "V19",
           "fr": "Riz gluant farci au poulet dans une feuille de lotus",
           "zhHans": "糯米鸡",
           "zhHant": "糯米雞",
-          "price": 10
+          "price": 10,
+          "en": "Sticky rice with chicken in lotus leaf"
         },
         {
           "id": "V20",
           "fr": "Brioche au porc laqué",
           "zhHans": "叉烧包",
           "zhHant": "叉燒包",
-          "price": 8
+          "price": 8,
+          "en": "BBQ pork bun"
         },
         {
           "id": "V21",
           "fr": "Brioche au poulet",
           "zhHans": "鸡饱仔",
           "zhHant": "雞飽仔",
-          "price": 8
+          "price": 8,
+          "en": "Chicken bun"
         },
         {
           "id": "V22",
           "fr": "Brioche à la crème de beurre",
           "zhHans": "奶王包",
           "zhHant": "奶王包",
-          "price": 8
+          "price": 8,
+          "en": "Custard bun"
         }
       ]
     },
@@ -731,7 +833,8 @@
       "name": {
         "fr": "Marmites",
         "zhHans": "煲仔",
-        "zhHant": "煲仔"
+        "zhHant": "煲仔",
+        "en": "Claypots"
       },
       "dishes": [
         {
@@ -739,112 +842,128 @@
           "fr": "Marmite au tofu et aux viandes variées",
           "zhHans": "八珍豆腐煲",
           "zhHant": "八珍豆腐煲",
-          "price": 16
+          "price": 16,
+          "en": "Tofu and mixed meat claypot"
         },
         {
           "id": "B2",
           "fr": "Marmite aux pattes de canard et à la sauce d'huître",
           "zhHans": "蚝油鸭掌煲",
           "zhHant": "蠔油鴨掌煲",
-          "price": 16
+          "price": 16,
+          "en": "Duck feet claypot in oyster sauce"
         },
         {
           "id": "B3",
           "fr": "Marmite d'aloyau et nerf de bœuf du chef",
           "zhHans": "柱候牛腩筋煲",
           "zhHant": "柱候牛腩筋煲",
-          "price": 16
+          "price": 16,
+          "en": "Chef's beef brisket and tendon claypot"
         },
         {
           "id": "B4",
           "fr": "Marmite de gambas aux vermicelles et à la sauce saté",
           "zhHans": "沙茶粉丝明虾煲",
           "zhHant": "沙茶粉絲明蝦煲",
-          "price": 21
+          "price": 21,
+          "en": "King prawn and vermicelli claypot, satay sauce"
         },
         {
           "id": "B5",
           "fr": "Marmite au tofu, poisson salé et poulet haché",
           "zhHans": "咸鱼鸡粒豆腐煲",
           "zhHant": "鹹魚雞粒豆腐煲",
-          "price": 12
+          "price": 12,
+          "en": "Tofu claypot with salted fish and minced chicken"
         },
         {
           "id": "B6",
           "fr": "Marmite de tofu et viande hachée",
           "zhHans": "红烧豆腐煲",
           "zhHant": "紅燒豆腐煲",
-          "price": 12
+          "price": 12,
+          "en": "Tofu and minced meat claypot"
         },
         {
           "id": "B7",
           "fr": "Marmite de poitrine de porc aux légumes secs",
           "zhHans": "梅菜扣肉煲",
           "zhHant": "梅菜扣肉煲",
-          "price": 14
+          "price": 14,
+          "en": "Pork belly claypot with preserved vegetables"
         },
         {
           "id": "B8",
           "fr": "Marmite de filet de poisson frit",
           "zhHans": "红烧斑腩煲",
           "zhHant": "紅燒斑腩煲",
-          "price": 14
+          "price": 14,
+          "en": "Fried fish fillet claypot"
         },
         {
           "id": "B9",
           "fr": "Marmite de riz au porc fumé",
           "zhHans": "腊味煲仔饭",
           "zhHant": "臘味煲仔飯",
-          "price": 12
+          "price": 12,
+          "en": "Claypot rice with cured pork"
         },
         {
           "id": "B10",
           "fr": "Marmite de légumes variés",
           "zhHans": "罗汉素菜煲",
           "zhHant": "羅漢素菜煲",
-          "price": 12
+          "price": 12,
+          "en": "Mixed vegetable claypot"
         },
         {
           "id": "B11",
           "fr": "Marmite de poitrine de mouton du chef",
           "zhHans": "羊腩煲",
           "zhHant": "羊腩煲",
-          "price": 16
+          "price": 16,
+          "en": "Chef's lamb brisket claypot"
         },
         {
           "id": "B12",
           "fr": "Marmite de poulet au curry",
           "zhHans": "咖喱鸡煲",
           "zhHant": "咖喱雞煲",
-          "price": 12
+          "price": 12,
+          "en": "Curry chicken claypot"
         },
         {
           "id": "B13",
           "fr": "Marmite aux aubergines, porc et poisson salé haché",
           "zhHans": "鱼香茄子煲",
           "zhHant": "魚香茄子煲",
-          "price": 14
+          "price": 14,
+          "en": "Aubergine claypot with pork and salted fish"
         },
         {
           "id": "B14",
           "fr": "Marmite de tofu farci",
           "zhHans": "煎酿豆腐煲",
           "zhHant": "煎釀豆腐煲",
-          "price": 18
+          "price": 18,
+          "en": "Stuffed tofu claypot"
         },
         {
           "id": "B15",
           "fr": "Marmite de pattes de poulet et racine de lotus",
           "zhHans": "南乳凤爪莲藕煲",
           "zhHant": "南乳鳳爪蓮藕煲",
-          "price": 16
+          "price": 16,
+          "en": "Chicken feet and lotus root claypot"
         },
         {
           "id": "B16",
           "fr": "Marmite de porc au caramel",
           "zhHans": "蜜汁肉",
           "zhHant": "蜜汁肉",
-          "price": 13
+          "price": 13,
+          "en": "Caramel pork claypot"
         }
       ]
     },
@@ -853,7 +972,8 @@
       "name": {
         "fr": "Potages",
         "zhHans": "汤类",
-        "zhHant": "湯類"
+        "zhHant": "湯類",
+        "en": "Soups"
       },
       "dishes": [
         {
@@ -861,35 +981,40 @@
           "fr": "Potage pékinois (piquant)",
           "zhHans": "酸辣汤",
           "zhHant": "酸辣湯",
-          "price": 6
+          "price": 6,
+          "en": "Hot & sour soup (Peking style)"
         },
         {
           "id": "2",
           "fr": "Potage au crabe et aux asperges",
           "zhHans": "蟹肉芦笋汤",
           "zhHant": "蟹肉蘆筍湯",
-          "price": 6
+          "price": 6,
+          "en": "Crab and asparagus soup"
         },
         {
           "id": "3",
           "fr": "Potage au bœuf haché",
           "zhHans": "西湖牛肉羹",
           "zhHant": "西湖牛肉羹",
-          "price": 6
+          "price": 6,
+          "en": "Minced beef soup"
         },
         {
           "id": "4",
           "fr": "Potage au poulet et au maïs",
           "zhHans": "粟米鸡蓉羹",
           "zhHant": "粟米雞蓉羹",
-          "price": 6
+          "price": 6,
+          "en": "Chicken and sweetcorn soup"
         },
         {
           "id": "5",
           "fr": "Soupe de poulet aux vermicelles",
           "zhHans": "鸡丝粉丝汤",
           "zhHant": "雞絲粉絲湯",
-          "price": 6
+          "price": 6,
+          "en": "Chicken vermicelli soup"
         }
       ]
     },
@@ -898,7 +1023,8 @@
       "name": {
         "fr": "Hors-d'œuvre",
         "zhHans": "冷盘",
-        "zhHant": "冷盤"
+        "zhHant": "冷盤",
+        "en": "Starters"
       },
       "dishes": [
         {
@@ -906,70 +1032,80 @@
           "fr": "Salade nature",
           "zhHans": "素沙律",
           "zhHant": "素沙律",
-          "price": 7
+          "price": 7,
+          "en": "Plain salad"
         },
         {
           "id": "7",
           "fr": "Salade aux fruits de mer",
           "zhHans": "海鲜沙律",
           "zhHant": "海鮮沙律",
-          "price": 8
+          "price": 8,
+          "en": "Seafood salad"
         },
         {
           "id": "8",
           "fr": "Salade au poulet",
           "zhHans": "鸡丝沙律",
           "zhHant": "雞絲沙律",
-          "price": 7
+          "price": 7,
+          "en": "Chicken salad"
         },
         {
           "id": "9",
           "fr": "Omelette aux fruits de mer",
           "zhHans": "海鲜煎蛋",
           "zhHant": "海鮮煎蛋",
-          "price": 8
+          "price": 8,
+          "en": "Seafood omelette"
         },
         {
           "id": "10",
           "fr": "Omelette Foo-Yon (aux légumes)",
           "zhHans": "芙蓉素蛋",
           "zhHant": "芙蓉素蛋",
-          "price": 7
+          "price": 7,
+          "en": "Foo-yung omelette (vegetables)"
         },
         {
           "id": "11",
           "fr": "Samoussa au curry",
           "zhHans": "咖哩角",
           "zhHant": "咖哩角",
-          "price": 7
+          "price": 7,
+          "en": "Curry samosa"
         },
         {
           "id": "12",
           "fr": "Impériaux aux crevettes",
           "zhHans": "虾小卷",
           "zhHant": "蝦小卷",
-          "price": 8
+          "price": 8,
+          "en": "Prawn rolls"
         },
         {
           "id": "13",
           "fr": "Impériaux (Nems)",
           "zhHans": "越南小春卷",
           "zhHant": "越南小春卷",
-          "price": 7
+          "price": 7,
+          "en": "Spring rolls (nems)"
         },
         {
           "id": "14",
           "fr": "Rouleaux de printemps (aux crevettes)",
           "zhHans": "生包虾卷",
           "zhHant": "生包蝦卷",
-          "price": 5
+          "price": 5,
+          "en": "Fresh summer rolls (prawn)"
         },
         {
           "id": "15",
           "fr": "Bo-Bun (vermicelles de riz au bœuf et 3 nems)",
           "zhHans": "春卷牛肉檬",
           "zhHant": "春卷牛肉檬",
-          "price": 13
+          "price": 13,
+          "en": "Bo bun (rice vermicelli with beef and 3 nems)"
         }
       ]
     },
@@ -978,7 +1114,8 @@
       "name": {
         "fr": "Fruits de mer",
         "zhHans": "海鲜类",
-        "zhHant": "海鮮類"
+        "zhHant": "海鮮類",
+        "en": "Seafood"
       },
       "dishes": [
         {
@@ -986,126 +1123,144 @@
           "fr": "Beignets de crevettes",
           "zhHans": "炸虾球",
           "zhHant": "炸蝦球",
-          "price": 13
+          "price": 13,
+          "en": "Prawn fritters"
         },
         {
           "id": "17",
           "fr": "Crevettes sautées à la sauce piquante",
           "zhHans": "干烧虾",
           "zhHant": "乾燒蝦",
-          "price": 13
+          "price": 13,
+          "en": "Prawns in spicy sauce"
         },
         {
           "id": "18",
           "fr": "Crevettes sautées à la sauce aigre-douce",
           "zhHans": "糖醋虾",
           "zhHant": "糖醋蝦",
-          "price": 13
+          "price": 13,
+          "en": "Sweet & sour prawns"
         },
         {
           "id": "19",
           "fr": "Crevettes sautées au curry",
           "zhHans": "咖哩虾",
           "zhHant": "咖哩蝦",
-          "price": 13
+          "price": 13,
+          "en": "Curry prawns"
         },
         {
           "id": "20",
           "fr": "Crevettes sautées aux légumes",
           "zhHans": "时菜虾",
           "zhHant": "時菜蝦",
-          "price": 13
+          "price": 13,
+          "en": "Prawns with vegetables"
         },
         {
           "id": "21",
           "fr": "Crevettes sautées au sel et au poivre",
           "zhHans": "椒盐虾",
           "zhHant": "椒鹽蝦",
-          "price": 14
+          "price": 14,
+          "en": "Salt & pepper prawns"
         },
         {
           "id": "22",
           "fr": "Coquilles St-Jacques sautées à la sauce piquante",
           "zhHans": "干烧干贝",
           "zhHant": "乾燒乾貝",
-          "price": 17
+          "price": 17,
+          "en": "Scallops in spicy sauce"
         },
         {
           "id": "23",
           "fr": "Coquilles St-Jacques sautées aux légumes",
           "zhHans": "时菜干贝",
           "zhHant": "時菜乾貝",
-          "price": 17
+          "price": 17,
+          "en": "Scallops with vegetables"
         },
         {
           "id": "24",
           "fr": "Pince de crabe farcie en beignet",
           "zhHans": "炸蟹钳",
           "zhHant": "炸蟹鉗",
-          "price": 16
+          "price": 16,
+          "en": "Stuffed crab claw fritter"
         },
         {
           "id": "25",
           "fr": "Pince de crabe sautée au gingembre et à la ciboulette",
           "zhHans": "姜葱蟹钳",
           "zhHant": "薑蔥蟹鉗",
-          "price": 16
+          "price": 16,
+          "en": "Crab claw with ginger and spring onion"
         },
         {
           "id": "26",
           "fr": "Filet de poisson sauté à la sauce piquante",
           "zhHans": "干烧鱼片",
           "zhHant": "乾燒魚片",
-          "price": 12
+          "price": 12,
+          "en": "Fish fillet in spicy sauce"
         },
         {
           "id": "27",
           "fr": "Filet de poisson sauté au maïs",
           "zhHans": "粟米鱼片",
           "zhHant": "粟米魚片",
-          "price": 12
+          "price": 12,
+          "en": "Fish fillet with sweetcorn"
         },
         {
           "id": "28",
           "fr": "Calamars sautés aux légumes",
           "zhHans": "时菜鱿鱼",
           "zhHant": "時菜魷魚",
-          "price": 13
+          "price": 13,
+          "en": "Squid with vegetables"
         },
         {
           "id": "29",
           "fr": "Calamars au sel et au poivre",
           "zhHans": "椒盐鱿鱼",
           "zhHant": "椒鹽魷魚",
-          "price": 13
+          "price": 13,
+          "en": "Salt & pepper squid"
         },
         {
           "id": "30",
           "fr": "Calamars sautés aux haricots noirs",
           "zhHans": "豉椒鱿鱼",
           "zhHant": "豉椒魷魚",
-          "price": 13
+          "price": 13,
+          "en": "Squid with black beans"
         },
         {
           "id": "31",
           "fr": "Cuisses de grenouilles sautées au sel et au poivre",
           "zhHans": "椒盐田鸡",
           "zhHant": "椒鹽田雞",
-          "price": 13
+          "price": 13,
+          "en": "Salt & pepper frog legs"
         },
         {
           "id": "32",
           "fr": "Cuisses de grenouilles au gingembre et à la ciboulette",
           "zhHans": "姜葱田鸡",
           "zhHant": "薑蔥田雞",
-          "price": 13
+          "price": 13,
+          "en": "Frog legs with ginger and spring onion"
         },
         {
           "id": "33",
           "fr": "Calamars et cuisses de grenouilles au sel et au poivre",
           "zhHans": "椒盐双拼",
           "zhHant": "椒鹽雙拼",
-          "price": 15
+          "price": 15,
+          "en": "Salt & pepper squid and frog legs"
         }
       ]
     },
@@ -1114,7 +1269,8 @@
       "name": {
         "fr": "Poulet",
         "zhHans": "鸡肉类",
-        "zhHant": "雞肉類"
+        "zhHant": "雞肉類",
+        "en": "Chicken"
       },
       "dishes": [
         {
@@ -1122,35 +1278,40 @@
           "fr": "Poulet au curry",
           "zhHans": "咖喱鸡",
           "zhHant": "咖喱雞",
-          "price": 10
+          "price": 10,
+          "en": "Curry chicken"
         },
         {
           "id": "35",
           "fr": "Poulet croustillant du chef",
           "zhHans": "油淋鸡",
           "zhHant": "油淋雞",
-          "price": 11
+          "price": 11,
+          "en": "Chef's crispy chicken"
         },
         {
           "id": "36",
           "fr": "Poulet au citron (frit)",
           "zhHans": "西柠鸡",
           "zhHant": "西檸雞",
-          "price": 10
+          "price": 10,
+          "en": "Lemon chicken (fried)"
         },
         {
           "id": "37",
           "fr": "Poulet à l'ananas",
           "zhHans": "菠萝鸡",
           "zhHant": "菠蘿雞",
-          "price": 10
+          "price": 10,
+          "en": "Pineapple chicken"
         },
         {
           "id": "38",
           "fr": "Poulet à l'impérial",
           "zhHans": "宫保鸡",
           "zhHant": "宮保雞",
-          "price": 10
+          "price": 10,
+          "en": "Imperial (kung pao) chicken"
         }
       ]
     },
@@ -1159,7 +1320,8 @@
       "name": {
         "fr": "Canard",
         "zhHans": "鸭类",
-        "zhHant": "鴨類"
+        "zhHant": "鴨類",
+        "en": "Duck"
       },
       "dishes": [
         {
@@ -1167,28 +1329,32 @@
           "fr": "Magret de canard aux cinq parfums",
           "zhHans": "五香鸭",
           "zhHant": "五香鴨",
-          "price": 12
+          "price": 12,
+          "en": "Five-spice duck breast"
         },
         {
           "id": "40",
           "fr": "Canard aux litchis et à l'ananas",
           "zhHans": "荔枝菠萝鸭",
           "zhHant": "荔枝菠蘿鴨",
-          "price": 12
+          "price": 12,
+          "en": "Duck with lychees and pineapple"
         },
         {
           "id": "41",
           "fr": "Canard aux champignons noirs",
           "zhHans": "木耳鸭",
           "zhHant": "木耳鴨",
-          "price": 12
+          "price": 12,
+          "en": "Duck with black mushrooms"
         },
         {
           "id": "42",
           "fr": "Canard aux champignons parfumés",
           "zhHans": "双冬鸭",
           "zhHant": "雙冬鴨",
-          "price": 12
+          "price": 12,
+          "en": "Duck with shiitake mushrooms"
         }
       ]
     },
@@ -1197,7 +1363,8 @@
       "name": {
         "fr": "Viandes",
         "zhHans": "牛猪肉类",
-        "zhHant": "牛豬肉類"
+        "zhHant": "牛豬肉類",
+        "en": "Meat"
       },
       "dishes": [
         {
@@ -1205,56 +1372,64 @@
           "fr": "Porc à la sauce aigre-douce",
           "zhHans": "咕噜肉",
           "zhHant": "咕嚕肉",
-          "price": 11
+          "price": 11,
+          "en": "Sweet & sour pork"
         },
         {
           "id": "44",
           "fr": "Porc au curry",
           "zhHans": "咖喱肉",
           "zhHant": "咖喱肉",
-          "price": 10
+          "price": 10,
+          "en": "Curry pork"
         },
         {
           "id": "45",
           "fr": "Porc chop-suey",
           "zhHans": "什碎肉",
           "zhHant": "什碎肉",
-          "price": 10
+          "price": 10,
+          "en": "Pork chop suey"
         },
         {
           "id": "46",
           "fr": "Bœuf aux oignons",
           "zhHans": "洋葱牛肉",
           "zhHant": "洋蔥牛肉",
-          "price": 11
+          "price": 11,
+          "en": "Beef with onions"
         },
         {
           "id": "47",
           "fr": "Bœuf sauté aux légumes",
           "zhHans": "时菜牛肉",
           "zhHant": "時菜牛肉",
-          "price": 11
+          "price": 11,
+          "en": "Beef with vegetables"
         },
         {
           "id": "48",
           "fr": "Bœuf sauté au saté",
           "zhHans": "沙茶牛肉",
           "zhHant": "沙茶牛肉",
-          "price": 11
+          "price": 11,
+          "en": "Beef with satay"
         },
         {
           "id": "49",
           "fr": "Tofu aux viandes hachées",
           "zhHans": "麻婆豆腐",
           "zhHant": "麻婆豆腐",
-          "price": 11
+          "price": 11,
+          "en": "Mapo tofu (minced meat)"
         },
         {
           "id": "50",
           "fr": "Agneau au saté",
           "zhHans": "沙茶羊肉",
           "zhHant": "沙茶羊肉",
-          "price": 13
+          "price": 13,
+          "en": "Lamb with satay"
         }
       ]
     },
@@ -1263,7 +1438,8 @@
       "name": {
         "fr": "Légumes · Riz · Nouilles",
         "zhHans": "素菜饭类",
-        "zhHant": "素菜飯類"
+        "zhHant": "素菜飯類",
+        "en": "Vegetables · Rice · Noodles"
       },
       "dishes": [
         {
@@ -1271,14 +1447,16 @@
           "fr": "Légumes chop-suey",
           "zhHans": "清炒什碎",
           "zhHant": "清炒什碎",
-          "price": 8
+          "price": 8,
+          "en": "Vegetable chop suey"
         },
         {
           "id": "52",
           "fr": "Choux blancs chinois aux champignons parfumés",
           "zhHans": "冬菇炆白菜",
           "zhHant": "冬菇炆白菜",
-          "price": 10
+          "price": 10,
+          "en": "Chinese cabbage with shiitake mushrooms"
         },
         {
           "id": "53",
@@ -1290,15 +1468,18 @@
               "fr": "Nature",
               "zhHans": "清炒",
               "zhHant": "清炒",
-              "price": 9
+              "price": 9,
+              "en": "Plain"
             },
             {
               "fr": "Sauce d'huître",
               "zhHans": "蚝油",
               "zhHant": "蠔油",
-              "price": 9
+              "price": 9,
+              "en": "Oyster sauce"
             }
-          ]
+          ],
+          "en": "Stir-fried broccoli"
         },
         {
           "id": "54",
@@ -1310,64 +1491,74 @@
               "fr": "Sauce de crevette",
               "zhHans": "腐乳",
               "zhHant": "腐乳",
-              "price": 13
+              "price": 13,
+              "en": "Shrimp sauce"
             },
             {
               "fr": "Sauce de crevette forte",
               "zhHans": "虾酱",
               "zhHant": "蝦醬",
-              "price": 13
+              "price": 13,
+              "en": "Strong shrimp sauce"
             }
-          ]
+          ],
+          "en": "Stir-fried water spinach"
         },
         {
           "id": "55",
           "fr": "Riz cantonais au porc rôti et aux crevettes",
           "zhHans": "扬州炒饭",
           "zhHant": "揚州炒飯",
-          "price": 9
+          "price": 9,
+          "en": "Cantonese fried rice with roast pork and prawns"
         },
         {
           "id": "56",
           "fr": "Riz sauté au poisson salé",
           "zhHans": "咸鱼炒饭",
           "zhHant": "鹹魚炒飯",
-          "price": 9
+          "price": 9,
+          "en": "Fried rice with salted fish"
         },
         {
           "id": "57",
           "fr": "Riz sauté à la thaïlandaise",
           "zhHans": "泰式炒饭",
           "zhHant": "泰式炒飯",
-          "price": 9
+          "price": 9,
+          "en": "Thai-style fried rice"
         },
         {
           "id": "58",
           "fr": "Riz cantonais",
           "zhHans": "广东炒饭",
           "zhHant": "廣東炒飯",
-          "price": 8
+          "price": 8,
+          "en": "Cantonese fried rice"
         },
         {
           "id": "59",
           "fr": "Riz nature",
           "zhHans": "白饭",
           "zhHant": "白飯",
-          "price": 3.5
+          "price": 3.5,
+          "en": "Steamed rice"
         },
         {
           "id": "60",
           "fr": "Nouilles sautées natures",
           "zhHans": "素炒面",
           "zhHant": "素炒麵",
-          "price": 8
+          "price": 8,
+          "en": "Plain fried noodles"
         },
         {
           "id": "61",
           "fr": "Riz Teochew",
           "zhHans": "潮州炒饭",
           "zhHant": "潮州炒飯",
-          "price": 9
+          "price": 9,
+          "en": "Teochew fried rice"
         }
       ]
     },
@@ -1376,7 +1567,8 @@
       "name": {
         "fr": "Plaque chauffante",
         "zhHans": "铁板",
-        "zhHant": "鐵板"
+        "zhHant": "鐵板",
+        "en": "Sizzling plates"
       },
       "dishes": [
         {
@@ -1384,49 +1576,56 @@
           "fr": "Bœuf sauté au poivre noir",
           "zhHans": "黑椒牛柳",
           "zhHant": "黑椒牛柳",
-          "price": 14
+          "price": 14,
+          "en": "Sizzling beef with black pepper"
         },
         {
           "id": "N2",
           "fr": "Agneau sauté au poivre noir",
           "zhHans": "黑椒羊柳",
           "zhHant": "黑椒羊柳",
-          "price": 14
+          "price": 14,
+          "en": "Sizzling lamb with black pepper"
         },
         {
           "id": "N3",
           "fr": "Magret de canard sauté au poivre",
           "zhHans": "黑椒鸭柳",
           "zhHant": "黑椒鴨柳",
-          "price": 14
+          "price": 14,
+          "en": "Sizzling duck breast with pepper"
         },
         {
           "id": "N4",
           "fr": "Gambas au sel et au poivre",
           "zhHans": "椒盐大虾",
           "zhHant": "椒鹽大蝦",
-          "price": 21
+          "price": 21,
+          "en": "Sizzling salt & pepper king prawns"
         },
         {
           "id": "N5",
           "fr": "Fruits de mer sautés au basilic",
           "zhHans": "金不换海鲜",
           "zhHant": "金不換海鮮",
-          "price": 18
+          "price": 18,
+          "en": "Sizzling seafood with basil"
         },
         {
           "id": "N6",
           "fr": "Filet de poisson sauté au basilic",
           "zhHans": "金不换鱼片",
           "zhHant": "金不換魚片",
-          "price": 16
+          "price": 16,
+          "en": "Sizzling fish fillet with basil"
         },
         {
           "id": "N7",
           "fr": "Cube de bœuf sauté au poivre noir",
           "zhHans": "黑椒牛粒",
           "zhHant": "黑椒牛粒",
-          "price": 16
+          "price": 16,
+          "en": "Sizzling beef cubes with black pepper"
         }
       ]
     },
@@ -1435,7 +1634,8 @@
       "name": {
         "fr": "Spécialités thaïlandaises et vietnamiennes",
         "zhHans": "泰国 越南菜",
-        "zhHant": "泰國 越南菜"
+        "zhHant": "泰國 越南菜",
+        "en": "Thai & Vietnamese specialities"
       },
       "dishes": [
         {
@@ -1443,147 +1643,168 @@
           "fr": "Soupe aux crevettes à la citronnelle thaï",
           "zhHans": "泰式酸虾汤",
           "zhHant": "泰式酸蝦湯",
-          "price": 8
+          "price": 8,
+          "en": "Thai lemongrass prawn soup"
         },
         {
           "id": "T2",
           "fr": "Soupe aux fruits de mer à la citronnelle thaï",
           "zhHans": "泰式海鲜汤",
           "zhHant": "泰式海鮮湯",
-          "price": 8
+          "price": 8,
+          "en": "Thai lemongrass seafood soup"
         },
         {
           "id": "T3",
           "fr": "Soupe au poisson maison (Camb.)",
           "zhHans": "高棉酸鱼汤",
           "zhHant": "高棉酸魚湯",
-          "price": 15
+          "price": 15,
+          "en": "House fish soup (Cambodian)"
         },
         {
           "id": "T4",
           "fr": "Soupe de gambas maison (Camb.)",
           "zhHans": "高棉大虾汤",
           "zhHant": "高棉大蝦湯",
-          "price": 20
+          "price": 20,
+          "en": "House king prawn soup (Cambodian)"
         },
         {
           "id": "T5",
           "fr": "Salade de pattes de poulet",
           "zhHans": "腌凤爪",
           "zhHant": "醃鳳爪",
-          "price": 12
+          "price": 12,
+          "en": "Chicken feet salad"
         },
         {
           "id": "T6",
           "fr": "Salade de bœuf",
           "zhHans": "腌牛肉",
           "zhHant": "醃牛肉",
-          "price": 12
+          "price": 12,
+          "en": "Beef salad"
         },
         {
           "id": "T7",
           "fr": "Salade de papaye",
           "zhHans": "腌木瓜",
           "zhHant": "醃木瓜",
-          "price": 12
+          "price": 12,
+          "en": "Papaya salad"
         },
         {
           "id": "T8",
           "fr": "Salade de fruits de mer à l'ananas",
           "zhHans": "海鲜菠萝沙律",
           "zhHant": "海鮮菠蘿沙律",
-          "price": 13
+          "price": 13,
+          "en": "Seafood and pineapple salad"
         },
         {
           "id": "T9",
           "fr": "Salade de calamars",
           "zhHans": "腌鱿鱼",
           "zhHant": "醃魷魚",
-          "price": 12
+          "price": 12,
+          "en": "Squid salad"
         },
         {
           "id": "T10",
           "fr": "Salade de crevettes",
           "zhHans": "腌虾",
           "zhHant": "醃蝦",
-          "price": 13
+          "price": 13,
+          "en": "Prawn salad"
         },
         {
           "id": "T14",
           "fr": "Agneau sauté au basilic",
           "zhHans": "金不换羊柳",
           "zhHant": "金不換羊柳",
-          "price": 13
+          "price": 13,
+          "en": "Lamb with basil"
         },
         {
           "id": "T15",
           "fr": "Cuisses de grenouilles sautées au basilic",
           "zhHans": "金不换田鸡",
           "zhHant": "金不換田雞",
-          "price": 13
+          "price": 13,
+          "en": "Frog legs with basil"
         },
         {
           "id": "T16",
           "fr": "Galette de poisson frit à la thaïlandaise",
           "zhHans": "泰式炸鱼饼",
           "zhHant": "泰式炸魚餅",
-          "price": 10
+          "price": 10,
+          "en": "Thai fried fish cakes"
         },
         {
           "id": "T17",
           "fr": "Saucisse thaïlandaise",
           "zhHans": "泰式香肠",
           "zhHant": "泰式香腸",
-          "price": 10
+          "price": 10,
+          "en": "Thai sausage"
         },
         {
           "id": "T18",
           "fr": "Poulet au lait de coco (pimenté)",
           "zhHans": "更鸡",
           "zhHant": "更雞",
-          "price": 11
+          "price": 11,
+          "en": "Chicken in coconut milk (spicy)"
         },
         {
           "id": "T19",
           "fr": "Canard au lait de coco (pimenté)",
           "zhHans": "更鸭",
           "zhHant": "更鴨",
-          "price": 12
+          "price": 12,
+          "en": "Duck in coconut milk (spicy)"
         },
         {
           "id": "T20",
           "fr": "Bœuf au lait de coco (pimenté)",
           "zhHans": "更牛",
           "zhHant": "更牛",
-          "price": 11
+          "price": 11,
+          "en": "Beef in coconut milk (spicy)"
         },
         {
           "id": "T21",
           "fr": "Bœuf sauté au basilic",
           "zhHans": "金不换炒牛",
           "zhHant": "金不換炒牛",
-          "price": 11
+          "price": 11,
+          "en": "Beef with basil"
         },
         {
           "id": "T22",
           "fr": "Canard sauté au basilic",
           "zhHans": "金不换炒鸭",
           "zhHant": "金不換炒鴨",
-          "price": 12
+          "price": 12,
+          "en": "Duck with basil"
         },
         {
           "id": "T23",
           "fr": "Crevettes sautées au basilic",
           "zhHans": "金不换炒虾",
           "zhHant": "金不換炒蝦",
-          "price": 14
+          "price": 14,
+          "en": "Prawns with basil"
         },
         {
           "id": "T24",
           "fr": "Riz gluant",
           "zhHans": "糯米饭",
           "zhHant": "糯米飯",
-          "price": 4.5
+          "price": 4.5,
+          "en": "Sticky rice"
         }
       ]
     },
@@ -1592,7 +1813,8 @@
       "name": {
         "fr": "Rôtisserie",
         "zhHans": "烧腊",
-        "zhHant": "燒臘"
+        "zhHant": "燒臘",
+        "en": "Roast meats"
       },
       "dishes": [
         {
@@ -1600,35 +1822,40 @@
           "fr": "Canard laqué (Céleste de Canton)",
           "zhHans": "明炉烧鸭",
           "zhHant": "明爐燒鴨",
-          "price": 12
+          "price": 12,
+          "en": "Roast duck (Cantonese)"
         },
         {
           "id": "E2",
           "fr": "Porc laqué",
           "zhHans": "蜜汁叉烧",
           "zhHant": "蜜汁叉燒",
-          "price": 10
+          "price": 10,
+          "en": "BBQ pork (char siu)"
         },
         {
           "id": "E3",
           "fr": "Tripes frites farcies",
           "zhHans": "百花酿大肠",
           "zhHant": "百花釀大腸",
-          "price": 17
+          "price": 17,
+          "en": "Stuffed fried pork intestines"
         },
         {
           "id": "E5",
           "fr": "Tripes frites",
           "zhHans": "酥炸大肠",
           "zhHant": "酥炸大腸",
-          "price": 13
+          "price": 13,
+          "en": "Fried pork intestines"
         },
         {
           "id": "E6",
           "fr": "Double rôtisserie",
           "zhHans": "烧腊双拼",
           "zhHant": "燒臘雙拼",
-          "price": 12
+          "price": 12,
+          "en": "Two-roast platter"
         },
         {
           "id": "E7",
@@ -1636,7 +1863,8 @@
           "zhHans": "北京片皮鸭三吃",
           "zhHant": "北京片皮鴨三吃",
           "price": 65,
-          "signature": true
+          "signature": true,
+          "en": "Peking duck, served three ways"
         }
       ]
     }

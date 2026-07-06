@@ -454,7 +454,11 @@ function MenuPage() {
   const cat = MENU.categories.find((c) => c.id === catId) ?? MENU.categories[0]
 
   // Une seule langue affichée : zh → hanzi, en → retombe sur le français (carte FR/中文)
-  const nameOf = (o) => (lang === 'zh-Hant' ? o.zhHant : lang === 'zh-Hans' ? o.zhHans : o.fr)
+  const nameOf = (o) =>
+    lang === 'zh-Hant' ? o.zhHant
+    : lang === 'zh-Hans' ? o.zhHans
+    : lang === 'en' ? (o.en ?? o.fr)
+    : o.fr
   const fmtPrice = (p) =>
     `${p.toLocaleString('fr-FR', { minimumFractionDigits: Number.isInteger(p) ? 0 : 2 })} €`
 
@@ -478,43 +482,44 @@ function MenuPage() {
         </div>
 
         <ul className="menu-grid">
-          {cat.dishes.map((d) => (
-            <li key={d.id} className="menu-card">
-              <div className="menu-img">
-                <div className="menu-noimg" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="3" />
-                    <circle cx="9" cy="9" r="2" />
-                    <path d="m21 15-3.5-3.5L6 23" />
-                  </svg>
+          {cat.dishes.map((d) => {
+            const prices = d.variants ? d.variants.map((v) => v.price) : [d.price]
+            const lo = Math.min(...prices)
+            const hi = Math.max(...prices)
+            const priceLabel = lo === hi ? fmtPrice(lo) : `${fmtPrice(lo)} – ${fmtPrice(hi)}`
+            return (
+              <li key={d.id} className="menu-row">
+                <div className="menu-img">
+                  <div className="menu-noimg" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="3" />
+                      <circle cx="9" cy="9" r="2" />
+                      <path d="m21 15-3.5-3.5L6 23" />
+                    </svg>
+                  </div>
+                  <img
+                    src={`${import.meta.env.BASE_URL}${d.id}.jpeg`}
+                    alt={nameOf(d)}
+                    loading="lazy"
+                    onError={(e) => e.currentTarget.remove()}
+                  />
                 </div>
-                <img
-                  src={`${import.meta.env.BASE_URL}${d.id}.jpeg`}
-                  alt={nameOf(d)}
-                  loading="lazy"
-                  onError={(e) => e.currentTarget.remove()}
-                />
-              </div>
-              <div className="menu-body">
-                <div className="menu-topline">
-                  <span className="menu-code">{d.id}</span>
-                  {d.price != null && <span className="menu-price">{fmtPrice(d.price)}</span>}
+                <div className="menu-main">
+                  <div className="menu-line">
+                    <span className="menu-code">{d.id}</span>
+                    <h3>{nameOf(d)}</h3>
+                    <span className="menu-price">{priceLabel}</span>
+                  </div>
+                  {d.variants && (
+                    <p className="menu-variants">
+                      {d.variants.map((v) => `${nameOf(v)} ${fmtPrice(v.price)}`).join(' · ')}
+                    </p>
+                  )}
+                  {d.note && <p className="menu-note">{nameOf(d.note)}</p>}
                 </div>
-                <h3>{nameOf(d)}</h3>
-                {d.variants && (
-                  <ul className="menu-variants">
-                    {d.variants.map((v) => (
-                      <li key={v.fr}>
-                        <span>{nameOf(v)}</span>
-                        <span className="menu-price">{fmtPrice(v.price)}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {d.note && <p className="menu-note">{nameOf(d.note)}</p>}
-              </div>
-            </li>
-          ))}
+              </li>
+            )
+          })}
         </ul>
       </div>
     </section>
