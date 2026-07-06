@@ -247,6 +247,33 @@ function ContactPage() {
 
 // ---------- App ----------
 
+// Pictos sociaux monochromes (hérite de currentColor)
+const SOCIAL_ICONS = {
+  Facebook: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  ),
+  Tripadvisor: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <circle cx="7" cy="13" r="4.2" />
+      <circle cx="17" cy="13" r="4.2" />
+      <circle cx="7" cy="13" r="1.4" fill="currentColor" stroke="none" />
+      <circle cx="17" cy="13" r="1.4" fill="currentColor" stroke="none" />
+      <path d="M2.8 9.5C4.5 7.2 8 6 12 6s7.5 1.2 9.2 3.5M12 6l-1.5 2M12 6l1.5 2" strokeLinecap="round" />
+    </svg>
+  ),
+  Yelp: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
+      <path d="M12 10.5V3.5" />
+      <path d="M10.2 13.2l-6.4 2.4" />
+      <path d="M11.2 15.3l-3.6 5" />
+      <path d="M13.6 15l2.6 5" />
+      <path d="M14.2 12.6l6-1.4" />
+    </svg>
+  ),
+}
+
 export default function App() {
   const route = useHashRoute()
   const { t } = useI18n()
@@ -261,11 +288,10 @@ export default function App() {
       <footer className="site-footer">
         <div className="container">
           <p className="footer-socials">
-            {RESTAURANT.socials.map(({ name, url }, i) => (
-              <span key={name}>
-                {i > 0 && ' · '}
-                <a href={url} target="_blank" rel="noreferrer">{name}</a>
-              </span>
+            {RESTAURANT.socials.map(({ name, url }) => (
+              <a key={name} href={url} target="_blank" rel="noreferrer" aria-label={name} title={name}>
+                {SOCIAL_ICONS[name] ?? name}
+              </a>
             ))}
           </p>
           © {new Date().getFullYear()} Dragonland — Torcy · {t('footer.rights')}

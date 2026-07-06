@@ -215,8 +215,19 @@
   
   .hours-table td:not(:first-child) { text-align: center; }
   
-  .footer-socials { margin: 0 0 0.5rem; }
-  .footer-socials a { color: var(--ink-soft); }
+  .footer-socials {
+    margin: 0 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  
+  .footer-socials a {
+    color: var(--ink-soft);
+    display: inline-flex;
+    padding: 0.25rem;
+  }
+  
   .footer-socials a:hover { color: var(--red); }
   
   @media (max-width: 480px) {
