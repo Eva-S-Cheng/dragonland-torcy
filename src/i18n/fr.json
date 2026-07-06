@@ -26,7 +26,8 @@
     "sun": "Dimanche",
     "closed": "Fermé",
     "lunch": "Midi",
-    "dinner": "Soir"
+    "dinner": "Soir",
+    "today": "Aujourd'hui"
   },
   "contact": {
     "title": "Nous trouver",

@@ -26,7 +26,8 @@
     "sun": "星期日",
     "closed": "休息",
     "lunch": "午市",
-    "dinner": "晚市"
+    "dinner": "晚市",
+    "today": "今日"
   },
   "contact": {
     "title": "餐厅位置",

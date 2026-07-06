@@ -23,6 +23,8 @@ const RESTAURANT = {
   ],
 }
 
+const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+
 // ---------- Mini routeur hash ----------
 const ROUTES = ['home', 'menu', 'contact']
 
@@ -40,8 +42,47 @@ function useHashRoute() {
   return route
 }
 
-// ---------- Composants ----------
+// ---------- Horaires ----------
+// fr → 11h45 ; en → 11:45 am (insécable) ; zh → 11:45（24h, usage courant）
+function formatTime(hhmm, lang) {
+  const [h, m] = hhmm.split(':').map(Number)
+  if (lang === 'fr') return `${h}h${String(m).padStart(2, '0')}`
+  if (lang === 'en') {
+    const ampm = h < 12 ? 'am' : 'pm'
+    const h12 = h % 12 === 0 ? 12 : h % 12
+    return `${h12}:${String(m).padStart(2, '0')}\u00A0${ampm}`
+  }
+  return hhmm
+}
 
+function formatRange(range, lang) {
+  return `${formatTime(range[0], lang)}\u00A0–\u00A0${formatTime(range[1], lang)}`
+}
+
+function HoursTable() {
+  const { t, lang } = useI18n()
+  return (
+    <table className="hours-table">
+      <tbody>
+        {RESTAURANT.hours.map(({ day, lunch, dinner }) => (
+          <tr key={day}>
+            <td>{t(`hours.${day}`)}</td>
+            {lunch ? (
+              <>
+                <td>{formatRange(lunch, lang)}</td>
+                <td>{formatRange(dinner, lang)}</td>
+              </>
+            ) : (
+              <td className="closed" colSpan={2}>{t('hours.closed')}</td>
+            )}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+}
+
+// ---------- Sélecteur de langue ----------
 function LangSwitcher() {
   const { lang, setLang } = useI18n()
   const [open, setOpen] = useState(false)
@@ -87,16 +128,55 @@ function LangSwitcher() {
   )
 }
 
-function Header({ route }) {
+// ---------- Rail latéral (desktop) ----------
+function Rail({ route }) {
+  const { t, lang } = useI18n()
+  const today = RESTAURANT.hours.find((h) => h.day === DAY_KEYS[new Date().getDay()])
+  return (
+    <aside className="rail">
+      <a className="rail-brand" href="#/home">
+        <span className="rail-mark" aria-hidden="true">忠誠</span>
+        <span className="rail-name">Dragonland</span>
+      </a>
+
+      <nav className="rail-nav" aria-label="Navigation">
+        <a href="#/home" aria-current={route === 'home' ? 'page' : undefined}>{t('nav.home')}</a>
+        <a href="#/menu" aria-current={route === 'menu' ? 'page' : undefined}>{t('nav.menu')}</a>
+        <a href="#/contact" aria-current={route === 'contact' ? 'page' : undefined}>{t('nav.contact')}</a>
+      </nav>
+
+      <div className="rail-cta">
+        <a className="btn rail-btn-solid" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
+        <a className="btn rail-btn-ghost" href={`tel:${RESTAURANT.phone}`}>{t('cta.call')} · {RESTAURANT.phoneDisplay}</a>
+      </div>
+
+      <div className="rail-today">
+        <span className="rail-today-label">{t('hours.today')}</span>
+        {today?.lunch ? (
+          <span>{formatRange(today.lunch, lang)}<br />{formatRange(today.dinner, lang)}</span>
+        ) : (
+          <span className="rail-closed">{t('hours.closed')}</span>
+        )}
+      </div>
+
+      <div className="rail-lang">
+        <LangSwitcher />
+      </div>
+    </aside>
+  )
+}
+
+// ---------- Barre supérieure (mobile) ----------
+function MobileHeader({ route }) {
   const { t } = useI18n()
   const [navOpen, setNavOpen] = useState(false)
   const close = () => setNavOpen(false)
 
   return (
-    <header className="site-header">
-      <div className="container">
+    <header className="m-header">
+      <div className="m-header-inner">
         <a className="brand" href="#/home" onClick={close}>{t('brand')}</a>
-        <nav className={`nav${navOpen ? ' open' : ''}`}>
+        <nav className={`m-nav${navOpen ? ' open' : ''}`}>
           <a href="#/home" aria-current={route === 'home' ? 'page' : undefined} onClick={close}>{t('nav.home')}</a>
           <a href="#/menu" aria-current={route === 'menu' ? 'page' : undefined} onClick={close}>{t('nav.menu')}</a>
           <a href="#/contact" aria-current={route === 'contact' ? 'page' : undefined} onClick={close}>{t('nav.contact')}</a>
@@ -117,6 +197,7 @@ function Header({ route }) {
   )
 }
 
+// ---------- Barre CTA (mobile) ----------
 function CtaBar() {
   const { t } = useI18n()
   return (
@@ -127,95 +208,40 @@ function CtaBar() {
   )
 }
 
-// Mise en forme des horaires selon la langue :
-// fr → 11h45 ; en → 11:45 am (espace insécable) ; zh → 11:45（24h, usage courant）
-function formatTime(hhmm, lang) {
-  const [h, m] = hhmm.split(':').map(Number)
-  if (lang === 'fr') return `${h}h${String(m).padStart(2, '0')}`
-  if (lang === 'en') {
-    const ampm = h < 12 ? 'am' : 'pm'
-    const h12 = h % 12 === 0 ? 12 : h % 12
-    return `${h12}:${String(m).padStart(2, '0')}\u00A0${ampm}`
-  }
-  return hhmm
-}
-
-function formatRange(range, lang) {
-  return `${formatTime(range[0], lang)}\u00A0–\u00A0${formatTime(range[1], lang)}`
-}
-
-function HoursTable() {
-  const { t, lang } = useI18n()
-  return (
-    <table className="hours-table">
-      <tbody>
-        {RESTAURANT.hours.map(({ day, lunch, dinner }) => (
-          <tr key={day}>
-            <td>{t(`hours.${day}`)}</td>
-            {lunch ? (
-              <>
-                <td>{formatRange(lunch, lang)}</td>
-                <td>{formatRange(dinner, lang)}</td>
-              </>
-            ) : (
-              <td className="closed" colSpan={2}>{t('hours.closed')}</td>
-            )}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
-}
-
-// ---------- Pages (squelettes — remplies aux étapes 2 et 3+) ----------
-
+// ---------- Pages ----------
 function HomePage() {
   const { t } = useI18n()
   return (
     <>
-      <section className="hero">
-        <div className="container">
-          <div>
-            <h1>{t('hero.title')}</h1>
-            <p>{t('hero.subtitle')}</p>
-            <p>{t('hero.note')}</p>
-            <p className="hero-cta">
-              <a className="btn btn-primary" href={RESTAURANT.takeawayUrl} target="_blank" rel="noreferrer">{t('cta.takeaway')}</a>
-              <a className="btn btn-outline" href={`tel:${RESTAURANT.phone}`}>{t('cta.book')}</a>
-            </p>
-          </div>
-          <div className="hero-panel">
-            <span className="hero-panel-mark" aria-hidden="true">忠誠</span>
-          </div>
-        </div>
+      <section className="intro">
+        <h1>{t('hero.subtitle')}</h1>
+        <p>{t('hero.note')}</p>
       </section>
+
       <section className="section">
-        <div className="container">
-          <div className="about-grid">
-            <div className="about-main">
-              <h2>{t('about.title')}</h2>
-              <p>{t('about.text')}</p>
-              <p>{t('about.text2')}</p>
-            </div>
-            <aside className="about-aside">
-              <h3>{t('features.title')}</h3>
-              <ul className="features">
-                <li>{t('features.terrace')}</li>
-                <li>{t('features.aircon')}</li>
-                <li>{t('features.pmr')}</li>
-                <li>{t('features.vouchers')}</li>
-                <li>{t('features.takeaway')}</li>
-              </ul>
-              <p className="about-events">{t('about.events')}</p>
-            </aside>
+        <div className="about-grid">
+          <div className="about-main">
+            <h2>{t('about.title')}</h2>
+            <p>{t('about.text')}</p>
+            <p>{t('about.text2')}</p>
           </div>
+          <aside className="about-aside">
+            <h3>{t('features.title')}</h3>
+            <ul className="features">
+              <li>{t('features.terrace')}</li>
+              <li>{t('features.aircon')}</li>
+              <li>{t('features.pmr')}</li>
+              <li>{t('features.vouchers')}</li>
+              <li>{t('features.takeaway')}</li>
+            </ul>
+            <p className="about-events">{t('about.events')}</p>
+          </aside>
         </div>
       </section>
-      <section className="section section-center">
-        <div className="container">
-          <h2>{t('hours.title')}</h2>
-          <HoursTable />
-        </div>
+
+      <section className="section">
+        <h2>{t('hours.title')}</h2>
+        <HoursTable />
       </section>
     </>
   )
@@ -225,10 +251,8 @@ function MenuPage() {
   const { t } = useI18n()
   return (
     <section className="section">
-      <div className="container">
-        <h1>{t('menu.title')}</h1>
-        <p>{t('menu.wip')}</p>
-      </div>
+      <h1>{t('menu.title')}</h1>
+      <p>{t('menu.wip')}</p>
     </section>
   )
 }
@@ -237,43 +261,38 @@ function ContactPage() {
   const { t } = useI18n()
   return (
     <section className="section">
-      <div className="container">
-        <h1>{t('contact.title')}</h1>
-        <div className="contact-grid">
-          <div className="contact-card">
-            <h2>Dragonland</h2>
-            <p className="contact-address">{t('contact.address')}</p>
-            <p className="contact-access">{t('contact.access')}</p>
-            <div className="contact-actions">
-              <a className="btn btn-primary" href={`tel:${RESTAURANT.phone}`}>
-                {t('cta.call')} · {RESTAURANT.phoneDisplay}
-              </a>
-              <a className="btn btn-outline" href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer">
-                {t('contact.directions')}
-              </a>
-            </div>
-            <p className="contact-note">{t('contact.bookNote')}</p>
-            <h3>{t('hours.title')}</h3>
-            <HoursTable />
+      <h1>{t('contact.title')}</h1>
+      <div className="contact-grid">
+        <div className="contact-card">
+          <p className="contact-address">{t('contact.address')}</p>
+          <p className="contact-access">{t('contact.access')}</p>
+          <div className="contact-actions">
+            <a className="btn btn-primary" href={`tel:${RESTAURANT.phone}`}>
+              {t('cta.call')} · {RESTAURANT.phoneDisplay}
+            </a>
+            <a className="btn btn-outline" href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer">
+              {t('contact.directions')}
+            </a>
           </div>
-          <div className="contact-map">
-            <iframe
-              title="Dragonland — Bay 1 Torcy"
-              src="https://maps.google.com/maps?q=Dragonland%2C%2022%20promenade%20du%207%C3%A8me%20Art%2C%2077200%20Torcy&z=16&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
+          <p className="contact-note">{t('contact.bookNote')}</p>
+          <h2>{t('hours.title')}</h2>
+          <HoursTable />
+        </div>
+        <div className="contact-map">
+          <iframe
+            title="Dragonland — Bay 1 Torcy"
+            src="https://maps.google.com/maps?q=Dragonland%2C%2022%20promenade%20du%207%C3%A8me%20Art%2C%2077200%20Torcy&z=16&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>
   )
 }
 
-// ---------- App ----------
-
-// Pictos sociaux monochromes (hérite de currentColor)
+// ---------- Pictos sociaux (monochromes, currentColor) ----------
 const SOCIAL_ICONS = {
   Facebook: (
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
@@ -289,30 +308,23 @@ const SOCIAL_ICONS = {
       <path d="M2.8 9.5C4.5 7.2 8 6 12 6s7.5 1.2 9.2 3.5M12 6l-1.5 2M12 6l1.5 2" strokeLinecap="round" />
     </svg>
   ),
-  Yelp: (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-      <path d="M12 10.5V3.5" />
-      <path d="M10.2 13.2l-6.4 2.4" />
-      <path d="M11.2 15.3l-3.6 5" />
-      <path d="M13.6 15l2.6 5" />
-      <path d="M14.2 12.6l6-1.4" />
-    </svg>
-  ),
 }
 
+// ---------- App ----------
 export default function App() {
   const route = useHashRoute()
   const { t } = useI18n()
   return (
-    <>
-      <Header route={route} />
-      <main>
-        {route === 'home' && <HomePage />}
-        {route === 'menu' && <MenuPage />}
-        {route === 'contact' && <ContactPage />}
-      </main>
-      <footer className="site-footer">
-        <div className="container">
+    <div className="layout">
+      <Rail route={route} />
+      <div className="content">
+        <MobileHeader route={route} />
+        <main>
+          {route === 'home' && <HomePage />}
+          {route === 'menu' && <MenuPage />}
+          {route === 'contact' && <ContactPage />}
+        </main>
+        <footer className="site-footer">
           <p className="footer-socials">
             {RESTAURANT.socials.map(({ name, url }) => (
               <a key={name} href={url} target="_blank" rel="noreferrer" aria-label={name} title={name}>
@@ -321,9 +333,9 @@ export default function App() {
             ))}
           </p>
           © {new Date().getFullYear()} Dragonland — Torcy · {t('footer.rights')}
-        </div>
-      </footer>
+        </footer>
+      </div>
       <CtaBar />
-    </>
+    </div>
   )
 }
