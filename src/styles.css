@@ -41,16 +41,16 @@
   
   h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
   
-  /* Polices chinoises cohérentes par script (évite le mélange de graisses
-     quand une fonte TC ne couvre pas les caractères simplifiés) */
+  /* Polices chinoises : Noto Sans TC/SC auto-hébergées (Fontsource) —
+     même famille pour les deux scripts, graisses identiques partout */
   html:lang(zh-Hant) body,
   html:lang(zh-Hant) h1, html:lang(zh-Hant) h2, html:lang(zh-Hant) h3 {
-    font-family: 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', system-ui, sans-serif;
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
   }
   
   html:lang(zh-Hans) body,
   html:lang(zh-Hans) h1, html:lang(zh-Hans) h2, html:lang(zh-Hans) h3 {
-    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
   }
   
   a { color: var(--red); }
@@ -219,6 +219,62 @@
     }
   
     .cta-bar a:last-child { border-right: none; }
+  }
+  
+  /* ---------- Page Contact ---------- */
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+  }
+  
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+  
+  .contact-card h2 {
+    margin: 0 0 0.25rem;
+    color: var(--red);
+  }
+  
+  .contact-card h3 { margin-top: 1.75rem; }
+  
+  .contact-address { font-weight: 600; margin: 0.25rem 0; }
+  
+  .contact-access { color: var(--ink-soft); margin: 0.25rem 0 1.25rem; }
+  
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0;
+  }
+  
+  .contact-note { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.75rem; }
+  
+  .contact-map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 320px;
+  }
+  
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
   }
   
   /* ---------- Footer ---------- */

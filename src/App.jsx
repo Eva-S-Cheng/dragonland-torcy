@@ -154,17 +154,33 @@ function ContactPage() {
     <section className="section">
       <div className="container">
         <h1>{t('contact.title')}</h1>
-        <p>{t('contact.address')}</p>
-        <p>
-          <a className="btn btn-outline" href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer">{t('contact.directions')}</a>
-        </p>
-        <p>
-          {t('contact.phone')} : <a href={`tel:${RESTAURANT.phone}`}>{RESTAURANT.phoneDisplay}</a>
-          <br />
-          {t('contact.bookNote')}
-        </p>
-        <h2>{t('hours.title')}</h2>
-        <HoursTable />
+        <div className="contact-grid">
+          <div className="contact-card">
+            <h2>Dragonland</h2>
+            <p className="contact-address">{t('contact.address')}</p>
+            <p className="contact-access">{t('contact.access')}</p>
+            <div className="contact-actions">
+              <a className="btn btn-primary" href={`tel:${RESTAURANT.phone}`}>
+                {t('cta.call')} · {RESTAURANT.phoneDisplay}
+              </a>
+              <a className="btn btn-outline" href={RESTAURANT.mapsUrl} target="_blank" rel="noreferrer">
+                {t('contact.directions')}
+              </a>
+            </div>
+            <p className="contact-note">{t('contact.bookNote')}</p>
+            <h3>{t('hours.title')}</h3>
+            <HoursTable />
+          </div>
+          <div className="contact-map">
+            <iframe
+              title="Dragonland — Bay 1 Torcy"
+              src="https://maps.google.com/maps?q=Dragonland%2C%2022%20promenade%20du%207%C3%A8me%20Art%2C%2077200%20Torcy&z=16&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        </div>
       </div>
     </section>
   )
