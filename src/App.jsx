@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useI18n, LANGS } from './i18n/index.jsx'
 
 // ---------- Données restaurant (source unique de vérité) ----------
@@ -25,19 +25,6 @@ const RESTAURANT = {
 
 const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
-// ---------- Plats signatures (sélection accueil) ----------
-// img: null → carré placeholder en attendant les photos
-// TODO prix homard à confirmer (carte : 48 € ; autre source : 74,10 €)
-const SIGNATURES = [
-  { id: 'M21', fr: 'Riz Loc-Lac', en: 'Loc lac rice', zhHant: '祿叻牛飯', zhHans: '禄叻牛饭', price: '13 €', img: null },
-  { id: 'S3', fr: 'Poulet au Kai-Cai Teochew', en: 'Teochew kai-cai chicken', zhHant: '潮州芥菜雞', zhHans: '潮州芥菜鸡', price: '13 €', img: null },
-  { id: 'E7', fr: 'Canard laqué pékinois, 3 services', en: 'Peking duck, three ways', zhHant: '北京片皮鴨三吃', zhHans: '北京片皮鸭三吃', price: '65 €', img: null },
-  { id: 'S1', fr: 'Boulettes de crabe frites Teochew', en: 'Teochew fried crab balls', zhHant: '潮州炸蟹棗', zhHans: '潮州炸蟹枣', price: '9 €', img: null },
-  { id: 'A24', fr: 'Homard sauté au sel & poivre', en: 'Salt & pepper lobster', zhHant: '椒鹽炒龍蝦', zhHans: '椒盐炒龙虾', price: '48 €', img: null },
-  { id: 'V2', fr: 'Raviolis de crevettes Ha-Kao', en: 'Har gow shrimp dumplings', zhHant: '羊城蝦餃', zhHans: '羊城虾饺', price: '8,50 €', img: null },
-  { id: 'M2', fr: 'Soupe Phnom Penh', en: 'Phnom Penh noodle soup', zhHant: '金邊粿條', zhHans: '金边裸条', price: '11 €', img: null },
-  { id: 'A4', fr: "Gambas au jaune d'œuf de canard", en: 'Salted egg yolk king prawns', zhHant: '金沙大蝦', zhHans: '金沙大虾', price: '21 €', img: null },
-]
 
 // ---------- Mini routeur hash ----------
 const ROUTES = ['home', 'menu', 'contact']
@@ -209,6 +196,17 @@ function Header({ route }) {
 }
 
 // ---------- Carrousel des signatures ----------
+const SIGNATURES = [
+  { id: 'M21', fr: 'Riz Loc-Lac', en: 'Loc lac rice', zhHant: '祿叻牛飯', zhHans: '禄叻牛饭', price: '13 €', img: null },
+  { id: 'S3', fr: 'Poulet au Kai-Cai Teochew', en: 'Teochew kai-cai chicken', zhHant: '潮州芥菜雞', zhHans: '潮州芥菜鸡', price: '13 €', img: null },
+  { id: 'E7', fr: 'Canard laqué pékinois, 3 services', en: 'Peking duck, three ways', zhHant: '北京片皮鴨三吃', zhHans: '北京片皮鸭三吃', price: '65 €', img: null },
+  { id: 'S1', fr: 'Boulettes de crabe frites Teochew', en: 'Teochew fried crab balls', zhHant: '潮州炸蟹棗', zhHans: '潮州炸蟹枣', price: '9 €', img: null },
+  { id: 'M2', fr: 'Soupe Phnom Penh', en: 'Phnom Penh noodle soup', zhHant: '金邊粿條', zhHans: '金边裸条', price: '11 €', img: null },
+  { id: 'A24', fr: 'Homard sauté au sel & poivre', en: 'Salt & pepper lobster', zhHant: '椒鹽炒龍蝦', zhHans: '椒盐炒龙虾', price: '48 €', img: null },
+  { id: 'V2', fr: 'Raviolis de crevette Ha-Kao', en: 'Har gow shrimp dumplings', zhHant: '羊城蝦餃', zhHans: '羊城虾饺', price: '8,50 €', img: null },
+  { id: 'A4', fr: 'Gambas au jaune d\u2019\u0153uf de canard', en: 'King prawns, salted egg yolk', zhHant: '金沙大蝦', zhHans: '金沙大虾', price: '21 €', img: null },
+]
+
 function SignatureCarousel() {
   const { t, lang } = useI18n()
   const isZh = lang.startsWith('zh')
@@ -251,59 +249,6 @@ function SignatureCarousel() {
 }
 
 // ---------- Pages ----------
-function SignatureCarousel() {
-  const { t, lang } = useI18n()
-  const trackRef = useRef(null)
-
-  const scroll = (dir) => {
-    const el = trackRef.current
-    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: 'smooth' })
-  }
-
-  const title = (dish) => {
-    if (lang === 'zh-Hant') return dish.zhHant
-    if (lang === 'zh-Hans') return dish.zhHans
-    return dish[lang] ?? dish.fr
-  }
-
-  const subtitle = (dish) => {
-    if (lang === 'zh-Hant' || lang === 'zh-Hans') return dish.fr
-    return dish.zhHans
-  }
-
-  return (
-    <section className="band sig-band">
-      <div className="container">
-        <div className="sig-head">
-          <h2>{t('signatures.title')}</h2>
-          <div className="sig-arrows">
-            <button aria-label="Précédent" onClick={() => scroll(-1)}>‹</button>
-            <button aria-label="Suivant" onClick={() => scroll(1)}>›</button>
-          </div>
-        </div>
-        <ul className="sig-track" ref={trackRef}>
-          {SIGNATURES.map((dish) => (
-            <li key={dish.code} className="sig-card">
-              <div className="sig-img" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="9" cy="9" r="2" />
-                  <path d="m21 15-3.5-3.5L6 23" />
-                </svg>
-              </div>
-              <div className="sig-body">
-                <span className="sig-name">{title(dish)}</span>
-                <span className="sig-zh">{subtitle(dish)}</span>
-                <span className="sig-price">{dish.price}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  )
-}
-
 function HomePage() {
   const { t } = useI18n()
   const status = openStatus()
@@ -346,8 +291,6 @@ function HomePage() {
           </ul>
         </div>
       </section>
-
-      <SignatureCarousel />
 
       <section className="band">
         <div className="container">
