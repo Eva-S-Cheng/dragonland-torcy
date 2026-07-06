@@ -1,59 +1,429 @@
-{
-  "brand": "Dragonland",
-  "nav": {
-    "home": "Accueil",
-    "menu": "La carte",
-    "contact": "Contact & Réservation"
-  },
-  "cta": {
-    "takeaway": "À emporter",
-    "call": "Appeler",
-    "book": "Réserver"
-  },
-  "hero": {
-    "title": "Dragonland",
-    "subtitle": "Cuisine chinoise, thaïlandaise et vietnamienne à Torcy",
-    "note": "Plats faits maison — sur place ou à emporter"
-  },
-  "hours": {
-    "title": "Horaires",
-    "mon": "Lundi",
-    "tue": "Mardi",
-    "wed": "Mercredi",
-    "thu": "Jeudi",
-    "fri": "Vendredi",
-    "sat": "Samedi",
-    "sun": "Dimanche",
-    "closed": "Fermé",
-    "lunch": "Midi",
-    "dinner": "Soir"
-  },
-  "contact": {
-    "title": "Nous trouver",
-    "address": "22 promenade du 7ᵉ Art, Centre commercial Bay 1, 77200 Torcy",
-    "directions": "Itinéraire",
-    "phone": "Téléphone",
-    "bookNote": "Réservation par téléphone",
-    "access": "À deux pas de la gare de Torcy (RER A) — parking gratuit du centre commercial Bay 1."
-  },
-  "menu": {
-    "title": "La carte",
-    "wip": "La carte arrive bientôt. En attendant, commandez à emporter."
-  },
-  "footer": {
-    "rights": "Tous droits réservés"
-  },
-  "about": {
-    "title": "La maison",
-    "text": "Dragonland vous accueille à Torcy, au sein du centre commercial Bay 1, autour d'une carte qui traverse les cuisines chinoise, thaïlandaise et vietnamienne. Tous nos plats sont préparés maison, avec des portions généreuses qui font la réputation de la maison. En salle climatisée ou en terrasse, à midi comme au soir.",
-    "events": "Le restaurant peut accueillir vos événements privés. Appelez-nous pour convenir d'une date."
-  },
-  "features": {
-    "title": "Bon à savoir",
-    "terrace": "Terrasse",
-    "aircon": "Salle climatisée",
-    "pmr": "Accès PMR",
-    "vouchers": "Tickets restaurant acceptés",
-    "takeaway": "Vente à emporter"
+/* ============================================================
+   Dragonland — design tokens
+   NOTE : --red-* sont des placeholders. À remplacer par les
+   valeurs extraites du logo (étape 1).
+   ============================================================ */
+
+   :root {
+    /* Couleurs */
+    --red: #7a1f2e;          /* bordeaux — à ajuster finement avec le logo */
+    --red-dark: #5c1522;     /* réservé aux états hover */
+    --red-soft: #f6edef;
+    --red-line: #e9d4d8;
+    --ink: #221d1b;
+    --ink-soft: #6b615d;
+    --paper: #fdfaf6;
+    --line: #e8ded6;
+    --gold: #c99a3f;         /* accent secondaire, à valider */
+  
+    /* Typo — pile générique (latin) ; le chinois est géré par :lang() plus bas */
+    --font-display: 'Georgia', serif;
+    --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  
+    /* Layout */
+    --max-width: 1080px;
+    --gutter: 1.25rem;
+    --cta-bar-height: 64px;
+    --radius: 10px;
   }
-}
+  
+  * { box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    font-size: clamp(0.95rem, 0.88rem + 0.35vw, 1.05rem);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; }
+  
+  /* Polices chinoises : Noto Sans TC/SC auto-hébergées (Fontsource) —
+     même famille pour les deux scripts, graisses identiques partout */
+  html:lang(zh-Hant) body,
+  html:lang(zh-Hant) h1, html:lang(zh-Hant) h2, html:lang(zh-Hant) h3 {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+  }
+  
+  html:lang(zh-Hans) body,
+  html:lang(zh-Hans) h1, html:lang(zh-Hans) h2, html:lang(zh-Hans) h3 {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  }
+  
+  a { color: var(--red); }
+  
+  :focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  
+  /* ---------- Structure ---------- */
+  
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+  
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 60px;
+  }
+  
+  .brand {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--red);
+    text-decoration: none;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+  
+  .nav a[aria-current='page'] { color: var(--red); font-weight: 600; }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Sélecteur de langue (déroulant) */
+  .lang-dropdown { position: relative; }
+  
+  .lang-current {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.35rem 0.65rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    min-width: 150px;
+    z-index: 30;
+  }
+  
+  .lang-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: transparent;
+    padding: 0.5rem 0.75rem;
+    border-radius: calc(var(--radius) - 4px);
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  
+  .lang-menu button:hover { background: var(--red-soft); }
+  .lang-menu button[aria-selected='true'] { color: var(--red); font-weight: 700; }
+  
+  /* Hamburger — caché sur desktop */
+  .menu-toggle {
+    display: none;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    border-radius: var(--radius);
+    padding: 0.3rem 0.6rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  
+  /* ---------- Sections ---------- */
+  
+  .hero {
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    margin: 0 0 0.5rem;
+    color: var(--red);
+  }
+  
+  .hero p { color: var(--ink-soft); margin: 0.25rem 0; }
+  
+  .section { padding: 2.5rem 0; }
+  .section h2 { color: var(--red); }
+  
+  /* Sections centrées (ex. horaires sur l'accueil) : titre centré,
+     tableau centré en bloc mais contenu aligné à gauche */
+  .section-center { text-align: center; }
+  .section-center .hours-table {
+    margin-inline: auto;
+    text-align: left;
+  }
+  
+  .about-text {
+    max-width: 640px;
+    margin: 0 auto 0.75rem;
+  }
+  
+  .about-events {
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
+  .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  
+  .features li {
+    border: 1px solid var(--red-line);
+    color: var(--red);
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .hours-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 520px;
+  }
+  
+  .hours-table td {
+    padding: 0.4rem 0.75rem 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  
+  .hours-table td:not(:first-child) { text-align: center; }
+  
+  .footer-socials {
+    margin: 0 0 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  
+  .footer-socials a {
+    color: var(--ink-soft);
+    display: inline-flex;
+    padding: 0.25rem;
+  }
+  
+  .footer-socials a:hover { color: var(--red); }
+  
+  @media (max-width: 480px) {
+    .hours-table { font-size: 0.85rem; }
+    .hours-table td { padding: 0.35rem 0.5rem 0.35rem 0; }
+  }
+  
+  .hours-table td:first-child { font-weight: 600; }
+  .hours-table td:not(:first-child) { text-align: center; }
+  .hours-table .closed { color: var(--red); font-weight: 600; }
+  
+  /* ---------- Boutons ---------- */
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+  }
+  
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-outline { border-color: var(--red); color: var(--red); background: transparent; }
+  .btn-outline:hover { background: var(--red-soft); }
+  
+  /* ---------- Barre CTA mobile ---------- */
+  
+  .cta-bar {
+    display: none;
+  }
+  
+  @media (max-width: 720px) {
+    body { padding-bottom: var(--cta-bar-height); }
+  
+    .menu-toggle { display: inline-flex; }
+  
+    .nav { display: none; }
+  
+    .nav.open {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 0.5rem 0;
+      z-index: 25;
+    }
+  
+    .nav.open a {
+      padding: 0.85rem var(--gutter);
+      border-bottom: 1px solid var(--line);
+    }
+  
+    .nav.open a:last-child { border-bottom: none; }
+  
+    .cta-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: var(--cta-bar-height);
+      background: var(--red);
+      z-index: 20;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  
+    .cta-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+    }
+  
+    .cta-bar a:last-child { border-right: none; }
+  }
+  
+  /* ---------- Page Contact ---------- */
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 1.5rem;
+  }
+  
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  
+    /* En colonne unique : blocs bornés et centrés, texte toujours à gauche */
+    .contact-card,
+    .contact-map {
+      width: 100%;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+  }
+  
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+  
+  .contact-card .hours-table { max-width: none; }
+  
+  .contact-card h2 {
+    margin: 0 0 0.25rem;
+    color: var(--red);
+  }
+  
+  .contact-card h3 { margin-top: 1.75rem; }
+  
+  .contact-address { font-weight: 600; margin: 0.25rem 0; }
+  
+  .contact-access { color: var(--ink-soft); margin: 0.25rem 0 1.25rem; }
+  
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.75rem 0;
+  }
+  
+  .contact-note { color: var(--ink-soft); font-size: 0.9rem; margin-top: 0.75rem; }
+  
+  .contact-map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    min-height: 320px;
+  }
+  
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: 0;
+  }
+  
+  /* ---------- Footer ---------- */
+  
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0 3rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    text-align: center;
+  }
