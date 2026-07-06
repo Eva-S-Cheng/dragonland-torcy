@@ -19,8 +19,8 @@
     --line: #e2d7c5;
     --gold: #c99a3f;
   
-    --shadow-soft: 0 10px 30px rgba(42, 30, 20, 0.08);
-    --shadow-pop: 0 16px 40px rgba(42, 30, 20, 0.14);
+    --shadow-soft: 0 10px 30px rgba(42, 30, 20, 0.11);
+    --shadow-pop: 0 16px 40px rgba(42, 30, 20, 0.18);
   
     color-scheme: light dark;
   
@@ -50,8 +50,8 @@
       --paper: #1b1512;
       --surface: #262019;
       --line: #3b332a;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
-      --shadow-pop: 0 16px 40px rgba(0, 0, 0, 0.45);
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.42);
+      --shadow-pop: 0 16px 40px rgba(0, 0, 0, 0.52);
     }
   }
   
