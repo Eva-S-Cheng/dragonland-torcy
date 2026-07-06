@@ -21,8 +21,8 @@
     --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
   
     /* Layout */
-    --max-width: 1080px;
-    --gutter: 1.25rem;
+    --max-width: 1240px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
     --cta-bar-height: 64px;
     --radius: 10px;
   }
@@ -178,7 +178,7 @@
   /* ---------- Sections ---------- */
   
   .hero {
-    padding: 4rem 0 3rem;
+    padding: clamp(4rem, 14vh, 8rem) 0 clamp(3rem, 10vh, 6rem);
     text-align: center;
   }
   
@@ -201,15 +201,39 @@
     text-align: left;
   }
   
-  .about-text {
-    max-width: 640px;
-    margin: 0 auto 0.75rem;
+  /* ---------- Section La maison ---------- */
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
   }
+  
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+  
+  .about-main h2 { margin-top: 0; }
+  
+  .about-main p {
+    font-size: 1.05em;
+    max-width: 60ch;
+  }
+  
+  .about-aside {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+  }
+  
+  .about-aside h3 { margin: 0 0 1rem; color: var(--red); }
   
   .about-events {
     color: var(--ink-soft);
-    max-width: 640px;
-    margin: 0 auto;
+    font-size: 0.95em;
+    margin: 1.25rem 0 0;
   }
   
   .features {
@@ -218,14 +242,13 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.6rem;
   }
   
   .features li {
     border: 1px solid var(--red-line);
     color: var(--red);
-    background: #fff;
+    background: var(--paper);
     border-radius: 999px;
     padding: 0.4rem 1rem;
     font-size: 0.9rem;

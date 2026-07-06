@@ -10,7 +10,6 @@ const RESTAURANT = {
   socials: [
     { name: 'Facebook', url: 'https://www.facebook.com/Dragonland-%E5%BF%A0%E8%AA%A0-215839242392397/' },
     { name: 'Tripadvisor', url: 'https://www.tripadvisor.fr/Restaurant_Review-g651715-d15660382-Reviews-Dragonland-Torcy_Marne_la_Vallee_Seine_et_Marne_Ile_de_France.html' },
-    { name: 'Yelp', url: 'https://www.yelp.com/biz/dragonland-torcy' },
   ],
   // Horaires : format neutre HH:MM, mis en forme par langue au rendu. null = fermé
   hours: [
@@ -185,22 +184,26 @@ function HomePage() {
           </p>
         </div>
       </section>
-      <section className="section section-center">
+      <section className="section">
         <div className="container">
-          <h2>{t('about.title')}</h2>
-          <p className="about-text">{t('about.text')}</p>
-          <p className="about-events">{t('about.events')}</p>
-        </div>
-      </section>
-      <section className="section section-center">
-        <div className="container">
-          <ul className="features">
-            <li>{t('features.terrace')}</li>
-            <li>{t('features.aircon')}</li>
-            <li>{t('features.pmr')}</li>
-            <li>{t('features.vouchers')}</li>
-            <li>{t('features.takeaway')}</li>
-          </ul>
+          <div className="about-grid">
+            <div className="about-main">
+              <h2>{t('about.title')}</h2>
+              <p>{t('about.text')}</p>
+              <p>{t('about.text2')}</p>
+            </div>
+            <aside className="about-aside">
+              <h3>{t('features.title')}</h3>
+              <ul className="features">
+                <li>{t('features.terrace')}</li>
+                <li>{t('features.aircon')}</li>
+                <li>{t('features.pmr')}</li>
+                <li>{t('features.vouchers')}</li>
+                <li>{t('features.takeaway')}</li>
+              </ul>
+              <p className="about-events">{t('about.events')}</p>
+            </aside>
+          </div>
         </div>
       </section>
       <section className="section section-center">
